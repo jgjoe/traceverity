@@ -78,7 +78,7 @@ CSV는 케이스 ID·활동·시각 매핑을 필수로, 자원·lifecycle은 �
 | 근거 이탈·금지 동작 | 0 / 0 |
 | 로컬 경로 노출 검사 | 응답 179건 중 0건 |
 
-공개 저장소의 Python 테스트는 168 / 168 통과합니다. 원본 데이터셋은 저장소에 넣지 않았고, 출처·지문·집계 값은 [`evidence/public-verification-summary.json`](evidence/public-verification-summary.json)에, 재현 절차는 [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md)에 있습니다.
+공개 저장소의 Python 테스트는 BPIC12 원본으로 기준 데이터를 만든 뒤 168 / 168 통과합니다. 원본 없이 실행하면 원본이 필요한 15건은 사유와 함께 건너뛰고 나머지 153건을 실행합니다(`PIW_REQUIRE_REAL_DATA=1`이면 건너뛰지 않고 실패). 원본 데이터셋은 저장소에 넣지 않았고, 출처·지문·집계 값은 [`evidence/public-verification-summary.json`](evidence/public-verification-summary.json)에, 재현 절차는 [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md)에 있습니다.
 
 ![처리 경로·전이·활동 집계 화면](docs/images/traceverity-process-patterns.png)
 

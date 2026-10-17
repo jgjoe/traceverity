@@ -5,6 +5,7 @@ from pathlib import Path
 
 import duckdb
 import pytest
+from real_data import require_real_data
 from fastapi.testclient import TestClient
 
 from piw.core import observed_gap_summary
@@ -17,8 +18,7 @@ REAL_CASE_ID = "173688"
 
 @pytest.fixture(scope="module")
 def client(tmp_path_factory: pytest.TempPathFactory) -> TestClient:
-    if not DATABASE.is_file():
-        pytest.fail(f"canonical integration database is missing: {DATABASE}")
+    require_real_data(DATABASE, "database")
     workspace = tmp_path_factory.mktemp("web")
     with TestClient(
         create_app(

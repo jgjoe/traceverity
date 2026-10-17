@@ -7,6 +7,7 @@ from typing import Any
 
 import duckdb
 import pytest
+from real_data import require_real_data
 
 from piw.evaluation import _compare_tool_call_fidelity, _start_server
 from piw.tools import CoreToolSurface, canonical_bytes
@@ -17,8 +18,7 @@ CASES = Path("evaluation/slice1-cases.json")
 
 @pytest.mark.integration
 def test_actual_bpic2012_read_only_tool_contract() -> None:
-    if not DATABASE.is_file():
-        pytest.fail(f"canonical integration database is missing: {DATABASE}")
+    require_real_data(DATABASE, "database")
     tools = CoreToolSurface(DATABASE)
     summary = tools.describe_log("bpic2012", 604_800_000)
     assert summary["result"]["case_count"] == 13_087

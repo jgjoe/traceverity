@@ -102,6 +102,8 @@ uv run pytest -q
 
 Public-tree Slice H result: **168 / 168 PASS**.
 
+Without the BPIC12 source and baseline, the 15 tests that need them are skipped with the missing path and the other 153 run. Set `PIW_REQUIRE_REAL_DATA=1` to make a missing source fail instead, as in canonical verification runs.
+
 The 22-test difference from the canonical Slice E count is intentional. This sanitized tree excludes canonical-only Help Desk evidence integration, model-backed Agent/MCP re-derivation, protected-artifact/PBIX regression, and historical evidence checks. Its 168 tests still cover the deterministic Core, imports, dataset resolution, HTTP behavior, tools, Agent protocol, MCP transport, analytics export, and browser onboarding. Canonical Slice E independently recorded Python 190/190, Direct Agent 12/12, MCP 12/12, and 22/22 Direct/MCP comparisons with mismatch 0; those remain published aggregate evidence, not the public-tree count.
 
 Model-backed evaluation remains local and optional. It requires a separately installed `llama.cpp` runtime and local model file; neither is bundled.

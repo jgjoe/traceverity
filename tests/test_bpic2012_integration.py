@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 import pytest
+from real_data import require_real_data
 
 from piw.core import build_report
 
@@ -12,8 +13,7 @@ SOURCE = Path("data/raw/BPI_Challenge_2012.xes.gz")
 
 @pytest.mark.integration
 def test_actual_bpic2012_counts_and_determinism(tmp_path: Path) -> None:
-    if not SOURCE.is_file():
-        pytest.fail(f"canonical integration source is missing: {SOURCE}")
+    require_real_data(SOURCE, "source")
     first = tmp_path / "first.json"
     second = tmp_path / "second.json"
     report = build_report(SOURCE, tmp_path / "first.duckdb", first, 604_800_000)
