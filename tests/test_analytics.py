@@ -7,6 +7,7 @@ from pathlib import Path
 
 import duckdb
 import pytest
+from real_data import require_real_data
 
 from piw.analytics import CSV_COLUMNS, export_analytics
 from piw.core import case_analytics, install_events
@@ -107,8 +108,7 @@ def test_export_schema_hashes_ordering_and_two_run_determinism(
 
 @pytest.mark.integration
 def test_actual_bpic2012_analytics_export(tmp_path: Path) -> None:
-    if not DATABASE.is_file():
-        pytest.fail(f"canonical integration database is missing: {DATABASE}")
+    require_real_data(DATABASE, "database")
     data_dir = tmp_path / "data"
     manifest_path = tmp_path / "export-manifest.json"
     manifest = export_analytics(DATABASE, data_dir, manifest_path)
