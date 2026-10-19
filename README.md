@@ -1,9 +1,8 @@
 # TraceVerity — 업무 프로세스 분석 워크벤치
 
-**업무 이벤트 로그를 브라우저에서 불러와 실제 처리 흐름을 분석하고, 웹·AI·MCP가 같은 계산 결과를 쓰도록 만든 분석 도구**
+**업무 이벤트 로그에서 처리 시간과 재작업을 조회하는 분석 도구**
 
-로컬 CSV·XES·XES.GZ 이벤트 로그를 브라우저에서 가져와 필드를 매핑·검증한 뒤 바로 분석합니다.
-핵심 지표는 Python/DuckDB 계산 엔진 한 곳에서만 만들고, 웹 화면·AI 에이전트·MCP는 그 결과를 읽기만 합니다.
+로컬 CSV, XES, XES.GZ 로그를 브라우저에서 가져와 필드를 매핑하고 검증한 뒤 처리 순서, 소요 시간과 재작업을 분석합니다. 핵심 지표는 Python/DuckDB 한 곳에서 계산하고 웹, AI 에이전트와 MCP가 같은 결과를 읽습니다.
 서로 다른 실제 업무 로그 2종(BPI Challenge 2012, Italian Help Desk)에서 같은 엔진으로 검증했습니다.
 
 ![가져오기 패널 아래에서 Italian Help Desk 데이터를 분석 중인 워크벤치](docs/images/traceverity-overview.png)
@@ -45,7 +44,7 @@ DatasetRegistry -> DatasetResolver -> CoreReadSurface
 ### AI는 계산하지 않고 읽기만 한다
 
 Direct Agent와 stdio MCP는 같은 스키마, `DatasetResolver`, `CoreReadSurface`를 씁니다. MCP는 전송 방식일 뿐 두 번째 계산 엔진이 아닙니다.
-답에 들어간 값이 도구가 돌려준 사실로 추적될 때만 답을 받아들이고, 도구로 확인할 수 없는 질문은 추정해 답하지 않습니다.
+답의 값이 도구 반환값으로 추적되는지 검사하고, 평가에서 근거 이탈과 금지 동작이 각각 0건인지 확인했습니다.
 
 ### 가져오기는 명시적으로
 
@@ -69,13 +68,13 @@ CSV는 케이스 ID·활동·시각 매핑을 필수로, 자원·lifecycle은 �
 
 | 검증 단계 | 결과 |
 |---|---:|
-| Python 회귀 테스트 | 190 / 190 통과 |
+| 개발본 Python 회귀 테스트 | 190 / 190 통과 |
 | 웹 프로덕션 빌드 | 통과 |
 | Playwright 전체 흐름 | 2 / 2 통과 |
 | Direct Agent | 12 / 12 통과 |
 | MCP Agent | 12 / 12 통과 |
-| Direct·MCP 결과 비교 | 22 / 22 일치 |
-| 근거 이탈·금지 동작 | 0 / 0 |
+| Direct Agent와 MCP Agent의 답 비교 | 22 / 22 일치 |
+| Agent 평가에서 근거 이탈 / 금지 동작 | 0건 / 0건 |
 | 로컬 경로 노출 검사 | 응답 179건 중 0건 |
 
 공개 저장소의 Python 테스트는 BPIC12 원본으로 기준 데이터를 만든 뒤 168 / 168 통과합니다. 원본 없이 실행하면 원본이 필요한 15건은 사유와 함께 건너뛰고 나머지 153건을 실행합니다(`PIW_REQUIRE_REAL_DATA=1`이면 건너뛰지 않고 실패). 원본 데이터셋은 저장소에 넣지 않았고, 출처·지문·집계 값은 [`evidence/public-verification-summary.json`](evidence/public-verification-summary.json)에, 재현 절차는 [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md)에 있습니다.
