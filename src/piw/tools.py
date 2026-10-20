@@ -69,7 +69,7 @@ class CoreToolSurface:
         return [
             {
                 "name": "describe_log",
-                "description": "Return deterministic log scalars and optional configured SLA facts.",
+                "description": "Return deterministic log scalars. Required: log_id. Optional sla_threshold_ms only for an explicitly requested configured threshold; never supply a default.",
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -82,7 +82,7 @@ class CoreToolSurface:
             },
             {
                 "name": "list_variants",
-                "description": "List deterministic COMPLETE-perspective variants.",
+                "description": "List COMPLETE-perspective variants. Required: log_id, order_by, limit (integer 1..100). order_by must be case_count_desc or variant_id_asc. Supply all three arguments; no defaults.",
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -98,7 +98,7 @@ class CoreToolSurface:
             },
             {
                 "name": "list_transitions",
-                "description": "List deterministic COMPLETE-perspective direct-follow transitions.",
+                "description": "List COMPLETE-perspective direct-follow transitions. Required: log_id, order_by, limit (integer 1..100). order_by must be transition_count_desc or activities_asc. Supply all three arguments; no defaults. Optional from_activity/to_activity only for explicitly requested filters.",
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -116,7 +116,7 @@ class CoreToolSurface:
             },
             {
                 "name": "list_activities",
-                "description": "List deterministic COMPLETE-perspective activity facts.",
+                "description": "List COMPLETE-perspective activity facts. Required: log_id, order_by, limit (integer 1..100). order_by must be event_count_desc, case_count_desc, rework_event_count_desc, or activity_asc. Supply all three arguments; no defaults.",
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -137,7 +137,7 @@ class CoreToolSurface:
             },
             {
                 "name": "get_case_trace",
-                "description": "Return one deterministic raw or COMPLETE-perspective case trace.",
+                "description": "Return one deterministic case trace. Required: log_id, case_id, perspective. perspective must be raw or complete. Supply all three arguments; no defaults.",
                 "parameters": {
                     "type": "object",
                     "properties": {
@@ -207,6 +207,36 @@ class CoreToolSurface:
                     "UNSUPPORTED_PARAMETER",
                     "unsupported tool parameter",
                     {"parameters": unsupported, "tool": name},
+                )
+            schema = next(
+                definition["parameters"] for definition in self.definitions()
+                if definition["name"] == name
+            )
+            missing = sorted(set(schema["required"]) - set(arguments))
+            enums = {
+                key: value["enum"] for key, value in schema["properties"].items()
+                if "enum" in value
+            }
+            invalid_enums = sorted(
+                key for key, allowed in enums.items()
+                if key in arguments and arguments[key] not in allowed
+            )
+            if missing or invalid_enums:
+                allowed_values = dict(enums)
+                if "limit" in schema["properties"]:
+                    limit = schema["properties"]["limit"]
+                    allowed_values["limit"] = {
+                        "minimum": limit["minimum"], "maximum": limit["maximum"],
+                    }
+                raise CoreSurfaceError(
+                    "INVALID_ARGUMENT",
+                    f"Missing required parameters: {canonical_json(missing)}. "
+                    f"Invalid enum parameters: {canonical_json(invalid_enums)}. "
+                    f"Allowed values: {canonical_json(allowed_values)}. "
+                    "Resend all required arguments; omitted values are never defaulted.",
+                    {"tool": name, "missing_parameters": missing,
+                     "invalid_enum_parameters": invalid_enums,
+                     "allowed_values": allowed_values},
                 )
             return getattr(self, name)(**arguments)
         except CoreSurfaceError as exc:

@@ -1,0 +1,1465 @@
+{
+  "activities_by_rework": [
+    {
+      "activity": "Take in charge ticket",
+      "case_count": 4285,
+      "event_count": 5060,
+      "rework_event_count": 775
+    },
+    {
+      "activity": "Assign seriousness",
+      "case_count": 4495,
+      "event_count": 4938,
+      "rework_event_count": 443
+    },
+    {
+      "activity": "Resolve ticket",
+      "case_count": 4569,
+      "event_count": 4983,
+      "rework_event_count": 414
+    },
+    {
+      "activity": "Wait",
+      "case_count": 1236,
+      "event_count": 1463,
+      "rework_event_count": 227
+    },
+    {
+      "activity": "Require upgrade",
+      "case_count": 102,
+      "event_count": 119,
+      "rework_event_count": 17
+    },
+    {
+      "activity": "Closed",
+      "case_count": 4559,
+      "event_count": 4574,
+      "rework_event_count": 15
+    },
+    {
+      "activity": "Create SW anomaly",
+      "case_count": 58,
+      "event_count": 67,
+      "rework_event_count": 9
+    },
+    {
+      "activity": "Resolve SW anomaly",
+      "case_count": 8,
+      "event_count": 13,
+      "rework_event_count": 5
+    },
+    {
+      "activity": "DUPLICATE",
+      "case_count": 1,
+      "event_count": 1,
+      "rework_event_count": 0
+    },
+    {
+      "activity": "INVALID",
+      "case_count": 2,
+      "event_count": 2,
+      "rework_event_count": 0
+    },
+    {
+      "activity": "Insert ticket",
+      "case_count": 118,
+      "event_count": 118,
+      "rework_event_count": 0
+    },
+    {
+      "activity": "RESOLVED",
+      "case_count": 2,
+      "event_count": 2,
+      "rework_event_count": 0
+    },
+    {
+      "activity": "Schedule intervention",
+      "case_count": 5,
+      "event_count": 5,
+      "rework_event_count": 0
+    },
+    {
+      "activity": "VERIFIED",
+      "case_count": 3,
+      "event_count": 3,
+      "rework_event_count": 0
+    }
+  ],
+  "analysis_event_count": 21348,
+  "case_count": 4580,
+  "cycle_time_summary": {
+    "count": 4580,
+    "max_ms": 5183565000,
+    "min_ms": 2647453000,
+    "p50_ms": 3442862000,
+    "p90_ms": 4579685000
+  },
+  "duration_by_rework": {
+    "with_rework": {
+      "count": 1240,
+      "max_ms": 5180970000,
+      "min_ms": 2647453000,
+      "p50_ms": 3530731000,
+      "p90_ms": 4669783000
+    },
+    "without_rework": {
+      "count": 3340,
+      "max_ms": 5183565000,
+      "min_ms": 2648354000,
+      "p50_ms": 3349305000,
+      "p90_ms": 4579349000
+    }
+  },
+  "integrity": {
+    "rework_events_preserved": true,
+    "transition_occurrences_preserved": true,
+    "variant_cases_preserved": true
+  },
+  "long_duration_transition_memberships": [
+    {
+      "containing_case_duration_ms": {
+        "count": 50,
+        "max_ms": 5163265000,
+        "min_ms": 2765222000,
+        "p50_ms": 4317242000,
+        "p90_ms": 5015674000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 222000,
+      "observed_gap_p90_ms": 500134000,
+      "to_activity": "Create SW anomaly",
+      "transition_count": 53
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 39,
+        "max_ms": 5021121000,
+        "min_ms": 2765222000,
+        "p50_ms": 4061412000,
+        "p90_ms": 4841449000
+      },
+      "from_activity": "Create SW anomaly",
+      "observed_gap_p50_ms": 1300304000,
+      "observed_gap_p90_ms": 3470825000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 42
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 84,
+        "max_ms": 5121962000,
+        "min_ms": 2663619000,
+        "p50_ms": 3628694000,
+        "p90_ms": 4832539000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 63466000,
+      "observed_gap_p90_ms": 1288477000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 99
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 82,
+        "max_ms": 5163265000,
+        "min_ms": 2665678000,
+        "p50_ms": 3628643000,
+        "p90_ms": 4925155000
+      },
+      "from_activity": "Require upgrade",
+      "observed_gap_p50_ms": 1316150000,
+      "observed_gap_p90_ms": 2681954000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 82
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 72,
+        "max_ms": 5108471000,
+        "min_ms": 2677073000,
+        "p50_ms": 3628425000,
+        "p90_ms": 4641722000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 252972000,
+      "observed_gap_p90_ms": 1273612000,
+      "to_activity": "Require upgrade",
+      "transition_count": 72
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 496,
+        "max_ms": 5178646000,
+        "min_ms": 2647453000,
+        "p50_ms": 3619680000,
+        "p90_ms": 4812574000
+      },
+      "from_activity": "Wait",
+      "observed_gap_p50_ms": 429255000,
+      "observed_gap_p90_ms": 1888632000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 558
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 98,
+        "max_ms": 5161906000,
+        "min_ms": 2672461000,
+        "p50_ms": 3573922000,
+        "p90_ms": 4748592000
+      },
+      "from_activity": "Wait",
+      "observed_gap_p50_ms": 84877000,
+      "observed_gap_p90_ms": 946510000,
+      "to_activity": "Wait",
+      "transition_count": 113
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 392,
+        "max_ms": 5180970000,
+        "min_ms": 2656136000,
+        "p50_ms": 3558864000,
+        "p90_ms": 4784413000
+      },
+      "from_activity": "Assign seriousness",
+      "observed_gap_p50_ms": 3925000,
+      "observed_gap_p90_ms": 1037466000,
+      "to_activity": "Assign seriousness",
+      "transition_count": 439
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 111,
+        "max_ms": 5181234000,
+        "min_ms": 2668894000,
+        "p50_ms": 3542561000,
+        "p90_ms": 4413393000
+      },
+      "from_activity": "Insert ticket",
+      "observed_gap_p50_ms": 267000,
+      "observed_gap_p90_ms": 72562000,
+      "to_activity": "Assign seriousness",
+      "transition_count": 111
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 69,
+        "max_ms": 5173428000,
+        "min_ms": 2667447000,
+        "p50_ms": 3538322000,
+        "p90_ms": 4669793000
+      },
+      "from_activity": "Assign seriousness",
+      "observed_gap_p50_ms": 15835000,
+      "observed_gap_p90_ms": 1039581000,
+      "to_activity": "Wait",
+      "transition_count": 69
+    }
+  ],
+  "long_duration_variants": [
+    {
+      "activity_sequence": [
+        "Insert ticket",
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 69,
+      "case_duration_ms": {
+        "count": 69,
+        "max_ms": 5181234000,
+        "min_ms": 2674942000,
+        "p50_ms": 3798463000,
+        "p90_ms": 4579425000
+      },
+      "case_share": 0.015065502183,
+      "variant_id": "9214d38ace18183a033a96bfc47bbe37095ed7c2fbfd02ca03cf6db8591ca9aa"
+    },
+    {
+      "activity_sequence": [
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 37,
+      "case_duration_ms": {
+        "count": 37,
+        "max_ms": 4926174000,
+        "min_ms": 2657432000,
+        "p50_ms": 3714975000,
+        "p90_ms": 4579332000
+      },
+      "case_share": 0.00807860262,
+      "variant_id": "34c4ee992f90bba21820f52d2eecc2891bd3ff582cff4f4baa292c7ab6161f12"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Require upgrade",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 40,
+      "case_duration_ms": {
+        "count": 40,
+        "max_ms": 5010413000,
+        "min_ms": 2679363000,
+        "p50_ms": 3709277000,
+        "p90_ms": 4641722000
+      },
+      "case_share": 0.008733624454,
+      "variant_id": "a132cd284811857b5c805d5c2f91469c4bcf8ebb9fe3f9285d225e9b8fcc82dc"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Wait",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 228,
+      "case_duration_ms": {
+        "count": 228,
+        "max_ms": 5178646000,
+        "min_ms": 2664151000,
+        "p50_ms": 3631651000,
+        "p90_ms": 4814829000
+      },
+      "case_share": 0.049781659389,
+      "variant_id": "c14472ccddb1889c656fb34cae0b88fa2a1cc3873931dd13ce37aa29748d9d9a"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 213,
+      "case_duration_ms": {
+        "count": 213,
+        "max_ms": 5180970000,
+        "min_ms": 2656136000,
+        "p50_ms": 3608466000,
+        "p90_ms": 4812006000
+      },
+      "case_share": 0.046506550218,
+      "variant_id": "8f1b87258c8b6abc74bde8900893a595832fdf705bd2c7932a9bc583660171cf"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Wait",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 35,
+      "case_duration_ms": {
+        "count": 35,
+        "max_ms": 5159055000,
+        "min_ms": 2678945000,
+        "p50_ms": 3550107000,
+        "p90_ms": 4937418000
+      },
+      "case_share": 0.007641921397,
+      "variant_id": "c7b11845cbdffb6623234c22dfd76a330f995d119fe47586a6befb628ffbabab"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 48,
+      "case_duration_ms": {
+        "count": 48,
+        "max_ms": 4998722000,
+        "min_ms": 2675351000,
+        "p50_ms": 3477516000,
+        "p90_ms": 4417966000
+      },
+      "case_share": 0.010480349345,
+      "variant_id": "abd224cb2824c0772995f786e5dab4f23b4fccfbe3f5e323e76c64f01999d5e8"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Wait",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 552,
+      "case_duration_ms": {
+        "count": 552,
+        "max_ms": 5183565000,
+        "min_ms": 2649572000,
+        "p50_ms": 3346432000,
+        "p90_ms": 4640540000
+      },
+      "case_share": 0.120524017467,
+      "variant_id": "41c1b318237d89c9c6603122a2e9c7594f7b3a39925bbb7dc0a6089b1d42c100"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 2366,
+      "case_duration_ms": {
+        "count": 2366,
+        "max_ms": 5182799000,
+        "min_ms": 2648354000,
+        "p50_ms": 3303508000,
+        "p90_ms": 4565445000
+      },
+      "case_share": 0.516593886463,
+      "variant_id": "b68ec1d0d23bd0d2c00e0d0041113df7ca94eb2b11755256ae7151643ebb8ab1"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 164,
+      "case_duration_ms": {
+        "count": 164,
+        "max_ms": 5098128000,
+        "min_ms": 2649684000,
+        "p50_ms": 3197183000,
+        "p90_ms": 4492879000
+      },
+      "case_share": 0.035807860262,
+      "variant_id": "2da57f0ed46be73e3b42dfc9b59d25a77147b9ac2f3f98d6043d3c16fb8e92ca"
+    }
+  ],
+  "metric_definition_version": "slice0-metrics-v1",
+  "minimum_cases_for_duration_ranking": 30,
+  "raw_event_count": 21348,
+  "rework": {
+    "activities": [
+      {
+        "activity": "Take in charge ticket",
+        "cases_with_rework": 623,
+        "rework_event_count": 775
+      },
+      {
+        "activity": "Assign seriousness",
+        "cases_with_rework": 394,
+        "rework_event_count": 443
+      },
+      {
+        "activity": "Resolve ticket",
+        "cases_with_rework": 386,
+        "rework_event_count": 414
+      },
+      {
+        "activity": "Wait",
+        "cases_with_rework": 194,
+        "rework_event_count": 227
+      },
+      {
+        "activity": "Require upgrade",
+        "cases_with_rework": 15,
+        "rework_event_count": 17
+      },
+      {
+        "activity": "Closed",
+        "cases_with_rework": 15,
+        "rework_event_count": 15
+      },
+      {
+        "activity": "Create SW anomaly",
+        "cases_with_rework": 8,
+        "rework_event_count": 9
+      },
+      {
+        "activity": "Resolve SW anomaly",
+        "cases_with_rework": 5,
+        "rework_event_count": 5
+      }
+    ],
+    "aggregate_rework_event_count": 1905,
+    "cases_with_rework": 1240
+  },
+  "schema_version": "v2-helpdesk-analysis-v1",
+  "source_sha256": "31024fa6da0a35578643d50f2bea6e90d5ce97628b64851e271b521f005eef1c",
+  "status": "PASS",
+  "top_variants_by_frequency": [
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 2366,
+      "case_duration_ms": {
+        "count": 2366,
+        "max_ms": 5182799000,
+        "min_ms": 2648354000,
+        "p50_ms": 3303508000,
+        "p90_ms": 4565445000
+      },
+      "case_share": 0.516593886463,
+      "variant_id": "b68ec1d0d23bd0d2c00e0d0041113df7ca94eb2b11755256ae7151643ebb8ab1"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Wait",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 552,
+      "case_duration_ms": {
+        "count": 552,
+        "max_ms": 5183565000,
+        "min_ms": 2649572000,
+        "p50_ms": 3346432000,
+        "p90_ms": 4640540000
+      },
+      "case_share": 0.120524017467,
+      "variant_id": "41c1b318237d89c9c6603122a2e9c7594f7b3a39925bbb7dc0a6089b1d42c100"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Wait",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 228,
+      "case_duration_ms": {
+        "count": 228,
+        "max_ms": 5178646000,
+        "min_ms": 2664151000,
+        "p50_ms": 3631651000,
+        "p90_ms": 4814829000
+      },
+      "case_share": 0.049781659389,
+      "variant_id": "c14472ccddb1889c656fb34cae0b88fa2a1cc3873931dd13ce37aa29748d9d9a"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 213,
+      "case_duration_ms": {
+        "count": 213,
+        "max_ms": 5180970000,
+        "min_ms": 2656136000,
+        "p50_ms": 3608466000,
+        "p90_ms": 4812006000
+      },
+      "case_share": 0.046506550218,
+      "variant_id": "8f1b87258c8b6abc74bde8900893a595832fdf705bd2c7932a9bc583660171cf"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 164,
+      "case_duration_ms": {
+        "count": 164,
+        "max_ms": 5098128000,
+        "min_ms": 2649684000,
+        "p50_ms": 3197183000,
+        "p90_ms": 4492879000
+      },
+      "case_share": 0.035807860262,
+      "variant_id": "2da57f0ed46be73e3b42dfc9b59d25a77147b9ac2f3f98d6043d3c16fb8e92ca"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 109,
+      "case_duration_ms": {
+        "count": 109,
+        "max_ms": 5098194000,
+        "min_ms": 2674937000,
+        "p50_ms": 3024249000,
+        "p90_ms": 4173882000
+      },
+      "case_share": 0.023799126638,
+      "variant_id": "608237c5aac62c4e05e22e8d459c1d7c0a7702451cb73c5f8f1f9abe5f4ea913"
+    },
+    {
+      "activity_sequence": [
+        "Insert ticket",
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 69,
+      "case_duration_ms": {
+        "count": 69,
+        "max_ms": 5181234000,
+        "min_ms": 2674942000,
+        "p50_ms": 3798463000,
+        "p90_ms": 4579425000
+      },
+      "case_share": 0.015065502183,
+      "variant_id": "9214d38ace18183a033a96bfc47bbe37095ed7c2fbfd02ca03cf6db8591ca9aa"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Resolve ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 62,
+      "case_duration_ms": {
+        "count": 62,
+        "max_ms": 5097680000,
+        "min_ms": 2665874000,
+        "p50_ms": 3197091000,
+        "p90_ms": 4061950000
+      },
+      "case_share": 0.013537117904,
+      "variant_id": "1af0295bca827fc30d13f3bfaba7c1ec5c16e6aad08d6b9d8225b5dad49ab013"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Take in charge ticket",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 48,
+      "case_duration_ms": {
+        "count": 48,
+        "max_ms": 4998722000,
+        "min_ms": 2675351000,
+        "p50_ms": 3477516000,
+        "p90_ms": 4417966000
+      },
+      "case_share": 0.010480349345,
+      "variant_id": "abd224cb2824c0772995f786e5dab4f23b4fccfbe3f5e323e76c64f01999d5e8"
+    },
+    {
+      "activity_sequence": [
+        "Assign seriousness",
+        "Take in charge ticket",
+        "Require upgrade",
+        "Resolve ticket",
+        "Closed"
+      ],
+      "case_count": 40,
+      "case_duration_ms": {
+        "count": 40,
+        "max_ms": 5010413000,
+        "min_ms": 2679363000,
+        "p50_ms": 3709277000,
+        "p90_ms": 4641722000
+      },
+      "case_share": 0.008733624454,
+      "variant_id": "a132cd284811857b5c805d5c2f91469c4bcf8ebb9fe3f9285d225e9b8fcc82dc"
+    }
+  ],
+  "transitions": [
+    {
+      "containing_case_duration_ms": {
+        "count": 392,
+        "max_ms": 5180970000,
+        "min_ms": 2656136000,
+        "p50_ms": 3558864000,
+        "p90_ms": 4784413000
+      },
+      "from_activity": "Assign seriousness",
+      "observed_gap_p50_ms": 3925000,
+      "observed_gap_p90_ms": 1037466000,
+      "to_activity": "Assign seriousness",
+      "transition_count": 439
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 4,
+        "max_ms": 4949407000,
+        "min_ms": 3536256000,
+        "p50_ms": 3953156000,
+        "p90_ms": 4949407000
+      },
+      "from_activity": "Assign seriousness",
+      "observed_gap_p50_ms": 275658000,
+      "observed_gap_p90_ms": 2427462000,
+      "to_activity": "Create SW anomaly",
+      "transition_count": 4
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 8,
+        "max_ms": 5095390000,
+        "min_ms": 2671249000,
+        "p50_ms": 2849139000,
+        "p90_ms": 5095390000
+      },
+      "from_activity": "Assign seriousness",
+      "observed_gap_p50_ms": 683393000,
+      "observed_gap_p90_ms": 1551654000,
+      "to_activity": "Require upgrade",
+      "transition_count": 8
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 258,
+        "max_ms": 5098128000,
+        "min_ms": 2649684000,
+        "p50_ms": 3197193000,
+        "p90_ms": 4320376000
+      },
+      "from_activity": "Assign seriousness",
+      "observed_gap_p50_ms": 6139000,
+      "observed_gap_p90_ms": 1377296000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 258
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 4159,
+        "max_ms": 5183565000,
+        "min_ms": 2647453000,
+        "p50_ms": 3452759000,
+        "p90_ms": 4581446000
+      },
+      "from_activity": "Assign seriousness",
+      "observed_gap_p50_ms": 21844000,
+      "observed_gap_p90_ms": 1209262000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 4160
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 69,
+        "max_ms": 5173428000,
+        "min_ms": 2667447000,
+        "p50_ms": 3538322000,
+        "p90_ms": 4669793000
+      },
+      "from_activity": "Assign seriousness",
+      "observed_gap_p50_ms": 15835000,
+      "observed_gap_p90_ms": 1039581000,
+      "to_activity": "Wait",
+      "transition_count": 69
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 14,
+        "max_ms": 4922509000,
+        "min_ms": 2678456000,
+        "p50_ms": 3456188000,
+        "p90_ms": 4419060000
+      },
+      "from_activity": "Closed",
+      "observed_gap_p50_ms": 0,
+      "observed_gap_p90_ms": 0,
+      "to_activity": "Closed",
+      "transition_count": 14
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 2,
+        "max_ms": 4408038000,
+        "min_ms": 4164281000,
+        "p50_ms": 4164281000,
+        "p90_ms": 4408038000
+      },
+      "from_activity": "Closed",
+      "observed_gap_p50_ms": 240461000,
+      "observed_gap_p90_ms": 2864969000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 2
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 4844438000,
+        "min_ms": 4844438000,
+        "p50_ms": 4844438000,
+        "p90_ms": 4844438000
+      },
+      "from_activity": "Closed",
+      "observed_gap_p50_ms": 548853000,
+      "observed_gap_p90_ms": 548853000,
+      "to_activity": "VERIFIED",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 4,
+        "max_ms": 4949407000,
+        "min_ms": 3536256000,
+        "p50_ms": 4408212000,
+        "p90_ms": 4949407000
+      },
+      "from_activity": "Create SW anomaly",
+      "observed_gap_p50_ms": 1000,
+      "observed_gap_p90_ms": 861575000,
+      "to_activity": "Create SW anomaly",
+      "transition_count": 4
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 11,
+        "max_ms": 5163265000,
+        "min_ms": 3093049000,
+        "p50_ms": 4593078000,
+        "p90_ms": 5069861000
+      },
+      "from_activity": "Create SW anomaly",
+      "observed_gap_p50_ms": 21000,
+      "observed_gap_p90_ms": 2758015000,
+      "to_activity": "Require upgrade",
+      "transition_count": 11
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 7,
+        "max_ms": 4949407000,
+        "min_ms": 3091973000,
+        "p50_ms": 3883945000,
+        "p90_ms": 4949407000
+      },
+      "from_activity": "Create SW anomaly",
+      "observed_gap_p50_ms": 790845000,
+      "observed_gap_p90_ms": 3110005000,
+      "to_activity": "Resolve SW anomaly",
+      "transition_count": 7
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 39,
+        "max_ms": 5021121000,
+        "min_ms": 2765222000,
+        "p50_ms": 4061412000,
+        "p90_ms": 4841449000
+      },
+      "from_activity": "Create SW anomaly",
+      "observed_gap_p50_ms": 1300304000,
+      "observed_gap_p90_ms": 3470825000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 42
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 3,
+        "max_ms": 4926023000,
+        "min_ms": 4336714000,
+        "p50_ms": 4403356000,
+        "p90_ms": 4926023000
+      },
+      "from_activity": "Create SW anomaly",
+      "observed_gap_p50_ms": 82281000,
+      "observed_gap_p90_ms": 98569000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 3
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 4336714000,
+        "min_ms": 4336714000,
+        "p50_ms": 4336714000,
+        "p90_ms": 4336714000
+      },
+      "from_activity": "DUPLICATE",
+      "observed_gap_p50_ms": 2430974000,
+      "observed_gap_p90_ms": 2430974000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 4844438000,
+        "min_ms": 4844438000,
+        "p50_ms": 4844438000,
+        "p90_ms": 4844438000
+      },
+      "from_activity": "INVALID",
+      "observed_gap_p50_ms": 1288366000,
+      "observed_gap_p90_ms": 1288366000,
+      "to_activity": "Closed",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 3093178000,
+        "min_ms": 3093178000,
+        "p50_ms": 3093178000,
+        "p90_ms": 3093178000
+      },
+      "from_activity": "INVALID",
+      "observed_gap_p50_ms": 385000,
+      "observed_gap_p90_ms": 385000,
+      "to_activity": "VERIFIED",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 111,
+        "max_ms": 5181234000,
+        "min_ms": 2668894000,
+        "p50_ms": 3542561000,
+        "p90_ms": 4413393000
+      },
+      "from_activity": "Insert ticket",
+      "observed_gap_p50_ms": 267000,
+      "observed_gap_p90_ms": 72562000,
+      "to_activity": "Assign seriousness",
+      "transition_count": 111
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 3,
+        "max_ms": 3973070000,
+        "min_ms": 2883658000,
+        "p50_ms": 3280183000,
+        "p90_ms": 3973070000
+      },
+      "from_activity": "Insert ticket",
+      "observed_gap_p50_ms": 190000,
+      "observed_gap_p90_ms": 972368000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 3
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 4,
+        "max_ms": 4151602000,
+        "min_ms": 2672461000,
+        "p50_ms": 2944883000,
+        "p90_ms": 4151602000
+      },
+      "from_activity": "Insert ticket",
+      "observed_gap_p50_ms": 2164649000,
+      "observed_gap_p90_ms": 3983193000,
+      "to_activity": "Wait",
+      "transition_count": 4
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 2,
+        "max_ms": 4844438000,
+        "min_ms": 3093178000,
+        "p50_ms": 3093178000,
+        "p90_ms": 4844438000
+      },
+      "from_activity": "RESOLVED",
+      "observed_gap_p50_ms": 0,
+      "observed_gap_p90_ms": 0,
+      "to_activity": "INVALID",
+      "transition_count": 2
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 3,
+        "max_ms": 4827465000,
+        "min_ms": 3093178000,
+        "p50_ms": 4652855000,
+        "p90_ms": 4827465000
+      },
+      "from_activity": "Require upgrade",
+      "observed_gap_p50_ms": 336219000,
+      "observed_gap_p90_ms": 1114311000,
+      "to_activity": "Create SW anomaly",
+      "transition_count": 3
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 15,
+        "max_ms": 5089828000,
+        "min_ms": 2677073000,
+        "p50_ms": 3962921000,
+        "p90_ms": 5069861000
+      },
+      "from_activity": "Require upgrade",
+      "observed_gap_p50_ms": 161356000,
+      "observed_gap_p90_ms": 1728307000,
+      "to_activity": "Require upgrade",
+      "transition_count": 16
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 82,
+        "max_ms": 5163265000,
+        "min_ms": 2665678000,
+        "p50_ms": 3628643000,
+        "p90_ms": 4925155000
+      },
+      "from_activity": "Require upgrade",
+      "observed_gap_p50_ms": 1316150000,
+      "observed_gap_p90_ms": 2681954000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 82
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 6,
+        "max_ms": 5108471000,
+        "min_ms": 2696573000,
+        "p50_ms": 2792643000,
+        "p90_ms": 5108471000
+      },
+      "from_activity": "Require upgrade",
+      "observed_gap_p50_ms": 179655000,
+      "observed_gap_p90_ms": 3083477000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 6
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 4336714000,
+        "min_ms": 4336714000,
+        "p50_ms": 4336714000,
+        "p90_ms": 4336714000
+      },
+      "from_activity": "Require upgrade",
+      "observed_gap_p50_ms": 3599000,
+      "observed_gap_p90_ms": 3599000,
+      "to_activity": "VERIFIED",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 8,
+        "max_ms": 5064518000,
+        "min_ms": 2687414000,
+        "p50_ms": 3624856000,
+        "p90_ms": 5064518000
+      },
+      "from_activity": "Require upgrade",
+      "observed_gap_p50_ms": 1913000,
+      "observed_gap_p90_ms": 1891975000,
+      "to_activity": "Wait",
+      "transition_count": 8
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 4,
+        "max_ms": 4949407000,
+        "min_ms": 3112416000,
+        "p50_ms": 3536256000,
+        "p90_ms": 4949407000
+      },
+      "from_activity": "Resolve SW anomaly",
+      "observed_gap_p50_ms": 268000,
+      "observed_gap_p90_ms": 2989000,
+      "to_activity": "Require upgrade",
+      "transition_count": 4
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 5,
+        "max_ms": 4949407000,
+        "min_ms": 3112416000,
+        "p50_ms": 3883945000,
+        "p90_ms": 4949407000
+      },
+      "from_activity": "Resolve SW anomaly",
+      "observed_gap_p50_ms": 3000,
+      "observed_gap_p90_ms": 78241000,
+      "to_activity": "Resolve SW anomaly",
+      "transition_count": 5
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 4,
+        "max_ms": 4940325000,
+        "min_ms": 3091973000,
+        "p50_ms": 3883945000,
+        "p90_ms": 4940325000
+      },
+      "from_activity": "Resolve SW anomaly",
+      "observed_gap_p50_ms": 1553796000,
+      "observed_gap_p90_ms": 2882324000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 4
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 3378976000,
+        "min_ms": 3378976000,
+        "p50_ms": 3378976000,
+        "p90_ms": 3378976000
+      },
+      "from_activity": "Resolve ticket",
+      "observed_gap_p50_ms": 1124209000,
+      "observed_gap_p90_ms": 1124209000,
+      "to_activity": "Assign seriousness",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 4557,
+        "max_ms": 5183565000,
+        "min_ms": 2647453000,
+        "p50_ms": 3441029000,
+        "p90_ms": 4579635000
+      },
+      "from_activity": "Resolve ticket",
+      "observed_gap_p50_ms": 2592070000,
+      "observed_gap_p90_ms": 3951209000,
+      "to_activity": "Closed",
+      "transition_count": 4558
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 2,
+        "max_ms": 4844438000,
+        "min_ms": 3093178000,
+        "p50_ms": 3093178000,
+        "p90_ms": 4844438000
+      },
+      "from_activity": "Resolve ticket",
+      "observed_gap_p50_ms": 7372000,
+      "observed_gap_p90_ms": 7660000,
+      "to_activity": "RESOLVED",
+      "transition_count": 2
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 2773930000,
+        "min_ms": 2773930000,
+        "p50_ms": 2773930000,
+        "p90_ms": 2773930000
+      },
+      "from_activity": "Resolve ticket",
+      "observed_gap_p50_ms": 63326000,
+      "observed_gap_p90_ms": 63326000,
+      "to_activity": "Require upgrade",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 247,
+        "max_ms": 5098194000,
+        "min_ms": 2652260000,
+        "p50_ms": 3200967000,
+        "p90_ms": 4245589000
+      },
+      "from_activity": "Resolve ticket",
+      "observed_gap_p50_ms": 1000,
+      "observed_gap_p90_ms": 60000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 254
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 146,
+        "max_ms": 5177821000,
+        "min_ms": 2675351000,
+        "p50_ms": 3456639000,
+        "p90_ms": 4585470000
+      },
+      "from_activity": "Resolve ticket",
+      "observed_gap_p50_ms": 108052000,
+      "observed_gap_p90_ms": 1197905000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 154
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 3,
+        "max_ms": 3802014000,
+        "min_ms": 3005799000,
+        "p50_ms": 3615125000,
+        "p90_ms": 3802014000
+      },
+      "from_activity": "Resolve ticket",
+      "observed_gap_p50_ms": 81680000,
+      "observed_gap_p90_ms": 245172000,
+      "to_activity": "Wait",
+      "transition_count": 3
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 4,
+        "max_ms": 3643877000,
+        "min_ms": 3010384000,
+        "p50_ms": 3042391000,
+        "p90_ms": 3643877000
+      },
+      "from_activity": "Schedule intervention",
+      "observed_gap_p50_ms": 781412000,
+      "observed_gap_p90_ms": 2257528000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 4
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 4233104000,
+        "min_ms": 4233104000,
+        "p50_ms": 4233104000,
+        "p90_ms": 4233104000
+      },
+      "from_activity": "Schedule intervention",
+      "observed_gap_p50_ms": 82321000,
+      "observed_gap_p90_ms": 82321000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 4064538000,
+        "min_ms": 4064538000,
+        "p50_ms": 4064538000,
+        "p90_ms": 4064538000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 66672000,
+      "observed_gap_p90_ms": 66672000,
+      "to_activity": "Assign seriousness",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 50,
+        "max_ms": 5163265000,
+        "min_ms": 2765222000,
+        "p50_ms": 4317242000,
+        "p90_ms": 5015674000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 222000,
+      "observed_gap_p90_ms": 500134000,
+      "to_activity": "Create SW anomaly",
+      "transition_count": 53
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 72,
+        "max_ms": 5108471000,
+        "min_ms": 2677073000,
+        "p50_ms": 3628425000,
+        "p90_ms": 4641722000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 252972000,
+      "observed_gap_p90_ms": 1273612000,
+      "to_activity": "Require upgrade",
+      "transition_count": 72
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 4940325000,
+        "min_ms": 4940325000,
+        "p50_ms": 4940325000,
+        "p90_ms": 4940325000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 1827303000,
+      "observed_gap_p90_ms": 1827303000,
+      "to_activity": "Resolve SW anomaly",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 3444,
+        "max_ms": 5182799000,
+        "min_ms": 2648354000,
+        "p50_ms": 3445723000,
+        "p90_ms": 4579255000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 9758000,
+      "observed_gap_p90_ms": 1064337000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 3563
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 5,
+        "max_ms": 4233104000,
+        "min_ms": 3010384000,
+        "p50_ms": 3566788000,
+        "p90_ms": 4233104000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 84366000,
+      "observed_gap_p90_ms": 968264000,
+      "to_activity": "Schedule intervention",
+      "transition_count": 5
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 84,
+        "max_ms": 5121962000,
+        "min_ms": 2663619000,
+        "p50_ms": 3628694000,
+        "p90_ms": 4832539000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 63466000,
+      "observed_gap_p90_ms": 1288477000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 99
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1169,
+        "max_ms": 5183565000,
+        "min_ms": 2647453000,
+        "p50_ms": 3459204000,
+        "p90_ms": 4677399000
+      },
+      "from_activity": "Take in charge ticket",
+      "observed_gap_p50_ms": 74555000,
+      "observed_gap_p90_ms": 931852000,
+      "to_activity": "Wait",
+      "transition_count": 1265
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 3093178000,
+        "min_ms": 3093178000,
+        "p50_ms": 3093178000,
+        "p90_ms": 3093178000
+      },
+      "from_activity": "VERIFIED",
+      "observed_gap_p50_ms": 1952708000,
+      "observed_gap_p90_ms": 1952708000,
+      "to_activity": "Closed",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 1,
+        "max_ms": 4336714000,
+        "min_ms": 4336714000,
+        "p50_ms": 4336714000,
+        "p90_ms": 4336714000
+      },
+      "from_activity": "VERIFIED",
+      "observed_gap_p50_ms": 0,
+      "observed_gap_p90_ms": 0,
+      "to_activity": "DUPLICATE",
+      "transition_count": 1
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 2,
+        "max_ms": 4246536000,
+        "min_ms": 3050507000,
+        "p50_ms": 3050507000,
+        "p90_ms": 4246536000
+      },
+      "from_activity": "Wait",
+      "observed_gap_p50_ms": 79944000,
+      "observed_gap_p90_ms": 1225428000,
+      "to_activity": "Assign seriousness",
+      "transition_count": 2
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 2,
+        "max_ms": 3093049000,
+        "min_ms": 2927126000,
+        "p50_ms": 2927126000,
+        "p90_ms": 3093049000
+      },
+      "from_activity": "Wait",
+      "observed_gap_p50_ms": 1196000,
+      "observed_gap_p90_ms": 793127000,
+      "to_activity": "Create SW anomaly",
+      "transition_count": 2
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 7,
+        "max_ms": 5064518000,
+        "min_ms": 2665678000,
+        "p50_ms": 3454858000,
+        "p90_ms": 5064518000
+      },
+      "from_activity": "Wait",
+      "observed_gap_p50_ms": 408923000,
+      "observed_gap_p90_ms": 3017242000,
+      "to_activity": "Require upgrade",
+      "transition_count": 7
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 766,
+        "max_ms": 5183565000,
+        "min_ms": 2647453000,
+        "p50_ms": 3436711000,
+        "p90_ms": 4645122000
+      },
+      "from_activity": "Wait",
+      "observed_gap_p50_ms": 780301000,
+      "observed_gap_p90_ms": 2242283000,
+      "to_activity": "Resolve ticket",
+      "transition_count": 773
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 496,
+        "max_ms": 5178646000,
+        "min_ms": 2647453000,
+        "p50_ms": 3619680000,
+        "p90_ms": 4812574000
+      },
+      "from_activity": "Wait",
+      "observed_gap_p50_ms": 429255000,
+      "observed_gap_p90_ms": 1888632000,
+      "to_activity": "Take in charge ticket",
+      "transition_count": 558
+    },
+    {
+      "containing_case_duration_ms": {
+        "count": 98,
+        "max_ms": 5161906000,
+        "min_ms": 2672461000,
+        "p50_ms": 3573922000,
+        "p90_ms": 4748592000
+      },
+      "from_activity": "Wait",
+      "observed_gap_p50_ms": 84877000,
+      "observed_gap_p90_ms": 946510000,
+      "to_activity": "Wait",
+      "transition_count": 113
+    }
+  ]
+}

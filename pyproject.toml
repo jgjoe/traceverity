@@ -15,6 +15,9 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+eval = [
+  "pm4py>=2.7,<3",
+]
 test = [
   "httpx>=0.28,<1",
   "pytest==9.1.1",
@@ -27,6 +30,9 @@ piw-mcp-eval = "piw.mcp_evaluation:main"
 piw-generalization-eval = "piw.generalization_evaluation:main"
 piw-web = "piw.web:main"
 piw-analytics-export = "piw.analytics:main"
+piw-crosscheck = "piw.crosscheck:main"
+piw-ai-verification = "piw.ai_verification:main"
+piw-helpdesk-analysis = "piw.helpdesk_analysis:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

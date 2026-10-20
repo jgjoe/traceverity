@@ -131,6 +131,22 @@ def test_mcp_normalizes_malformed_model_requests_like_the_direct_route(runtimes)
         assert mcp.dispatch(tool, arguments) == direct.dispatch(tool, arguments)
 
 
+@pytest.mark.parametrize("tool", ["list_variants", "list_transitions", "list_activities"])
+def test_missing_required_argument_recovery_is_identical_on_direct_and_mcp(runtimes, tool):
+    direct, mcp = runtimes
+    arguments = {"log_id": "tickets"}
+    expected = direct.dispatch(tool, arguments)
+    assert expected["error"]["code"] == "INVALID_ARGUMENT"
+    assert expected["error"]["details"]["missing_parameters"] == ["limit", "order_by"]
+    assert mcp.dispatch(tool, arguments) == expected
+    definition = next(d for d in direct.definitions() if d["name"] == tool)
+    for value in definition["parameters"]["properties"]["order_by"]["enum"]:
+        assert value in expected["error"]["message"]
+    repaired = {**arguments, "order_by": definition["parameters"]["properties"]["order_by"]["enum"][0], "limit": 1}
+    assert "error" not in direct.dispatch(tool, repaired)
+    assert mcp.dispatch(tool, repaired) == direct.dispatch(tool, repaired)
+
+
 def test_mcp_success_envelope_and_ids_are_exact(runtimes) -> None:
     direct, mcp = runtimes
     arguments = {"log_id": "bpic2012"}

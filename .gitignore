@@ -30,6 +30,9 @@ web/playwright-report/
 # Public distribution exposes only the curated aggregate summary.
 evidence/*
 !evidence/public-verification-summary.json
+!evidence/v2-crosscheck.json
+!evidence/v2-ai-verification.json
+!evidence/v2-helpdesk-analysis.json
 
 # Private/internal project state
 memory/
