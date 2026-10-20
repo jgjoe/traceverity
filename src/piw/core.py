@@ -5,14 +5,14 @@ import json
 import csv
 import tempfile
 from collections import defaultdict
-from collections.abc import Iterable
+from collections.abc import Generator, Iterable
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 import duckdb
 
-from .csv_ingest import csv_trace_count, iter_csv_events
+from .csv_ingest import iter_csv_events
 from .datasets import (
     SOURCE_FORMAT_CSV,
     SOURCE_FORMAT_XES,
@@ -22,7 +22,7 @@ from .datasets import (
 )
 from .events import COMPLETE_LIFECYCLE, Event, SourceContractError
 from .profiles import BPIC2012
-from .xes import iter_xes_events, source_trace_count
+from .xes import iter_xes_events
 
 METRIC_DEFINITION_VERSION = "slice0-metrics-v1"
 REPORT_SCHEMA_VERSION = "slice0-report-v1"
@@ -135,14 +135,20 @@ class IngestResult:
 
 
 def _stage_events(
-    descriptor: DatasetDescriptor, events: Iterable[Event]
-) -> tuple[Path, int]:
-    """Stage canonical events beside the dataset database, transactionally safe."""
+    descriptor: DatasetDescriptor, events: Generator[Event, None, int]
+) -> tuple[Path, int, int]:
+    """Stage events and collect the adapter's source count in the same pass."""
 
     staging_dir = descriptor.database_path.parent
     staging_dir.mkdir(parents=True, exist_ok=True)
     staging_path: Path | None = None
     inserted = 0
+    trace_count = 0
+
+    def counted_events() -> Generator[Event, None, None]:
+        nonlocal trace_count
+        trace_count = yield from events
+
     try:
         with tempfile.NamedTemporaryFile(
             mode="w",
@@ -161,7 +167,7 @@ def _stage_events(
                 lineterminator="\n",
                 quoting=csv.QUOTE_MINIMAL,
             )
-            for event in events:
+            for event in counted_events():
                 optional_values = (event.lifecycle, event.resource)
                 if _NULL_SENTINEL in optional_values:
                     raise ValueError("source value collides with the internal null sentinel")
@@ -183,7 +189,7 @@ def _stage_events(
             staging_path.unlink(missing_ok=True)
         raise
     assert staging_path is not None
-    return staging_path, inserted
+    return staging_path, inserted, trace_count
 
 
 def _copy_staged(
@@ -234,13 +240,11 @@ def ingest_dataset(
             "re-register the dataset before rebuilding"
         )
     if descriptor.source_format == SOURCE_FORMAT_XES:
-        trace_count = source_trace_count(source_path)
-        events: Iterable[Event] = iter_xes_events(source_path)
+        events = iter_xes_events(source_path)
     else:
         config = descriptor.csv_config()
-        trace_count = csv_trace_count(source_path, config)
         events = iter_csv_events(source_path, config)
-    staging_path, inserted = _stage_events(descriptor, events)
+    staging_path, inserted, trace_count = _stage_events(descriptor, events)
     try:
         _copy_staged(connection, staging_path, fingerprint)
     finally:

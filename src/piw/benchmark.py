@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import cProfile
 import csv
+import hashlib
 import io
 import json
 import os
@@ -36,6 +37,7 @@ from .datasets import (
     CsvImportConfig,
     DatasetDescriptor,
     TimestampConfig,
+    canonical_json,
     source_fingerprint,
 )
 from .profiles import BPIC2012
@@ -355,7 +357,7 @@ def measure(names: list[str], phases: list[str], runs: int, warmup: int) -> dict
 
 
 def snapshot(names: list[str]) -> dict[str, Any]:
-    """Every observable Core answer, for byte comparison before and after a change."""
+    """Fixed Core invocations, for byte comparison before and after a change."""
 
     result: dict[str, Any] = {}
     for name in names:
@@ -389,6 +391,35 @@ def snapshot(names: list[str]) -> dict[str, Any]:
     return result
 
 
+def compare_snapshots(before_path: Path, after_path: Path) -> dict[str, Any]:
+    """Publish only normalized answer hashes, never the underlying event data."""
+
+    before = json.loads(before_path.read_text(encoding="utf-8"))
+    after = json.loads(after_path.read_text(encoding="utf-8"))
+    expected = set((*REAL_DATASETS, *SYNTHETIC_DATASETS))
+    if set(before) != expected or set(after) != expected:
+        raise ValueError("snapshots must contain exactly the six benchmark datasets")
+    datasets = {}
+    for name in sorted(expected):
+        if set(before[name]) != set(after[name]):
+            raise ValueError(f"{name}: snapshot response keys differ")
+        answers = {}
+        for key in sorted(before[name]):
+            left = canonical_json(before[name][key]).encode("utf-8")
+            right = canonical_json(after[name][key]).encode("utf-8")
+            answers[key] = {
+                "before_sha256": hashlib.sha256(left).hexdigest(),
+                "after_sha256": hashlib.sha256(right).hexdigest(),
+                "byte_identical": left == right,
+            }
+        datasets[name] = answers
+    return {
+        "normalization": "piw.datasets.canonical_json(value).encode('utf-8'); no fields removed",
+        "datasets": datasets,
+        "passed": all(item["byte_identical"] for answers in datasets.values() for item in answers.values()),
+    }
+
+
 def profile(name: str, phase: str, top: int) -> str:
     run = operation(name, phase)
     profiler = cProfile.Profile()
@@ -419,6 +450,10 @@ def parser() -> argparse.ArgumentParser:
     snap = commands.add_parser("snapshot", help="write every Core answer for byte comparison")
     snap.add_argument("--out", type=Path, required=True)
     snap.add_argument("--datasets", nargs="+", choices=all_names, default=all_names)
+    compared = commands.add_parser("compare", help="compare all six datasets without publishing raw answers")
+    compared.add_argument("--before", type=Path, required=True)
+    compared.add_argument("--after", type=Path, required=True)
+    compared.add_argument("--out", type=Path, required=True)
     profiled = commands.add_parser("profile", help="cProfile one phase in this process")
     profiled.add_argument("dataset", choices=all_names)
     profiled.add_argument("phase", choices=PHASES)
@@ -439,6 +474,10 @@ def main(argv: list[str] | None = None) -> int:
     elif args.command == "snapshot":
         ensure_sources(args.datasets)
         _write_json(args.out, snapshot(args.datasets))
+    elif args.command == "compare":
+        result = compare_snapshots(args.before, args.after)
+        _write_json(args.out, result)
+        return 0 if result["passed"] else 1
     else:
         print(profile(args.dataset, args.phase, args.top))
     return 0
