@@ -1,0 +1,1458 @@
+{
+  "datasets": {
+    "bpic2012": {
+      "aligned_mismatch_counts": {
+        "aggregate_rework_event_count": 0,
+        "analysis_distinct_activity_count": 0,
+        "analysis_event_count": 0,
+        "case_count": 0,
+        "cases_with_rework": 0,
+        "dfg": 0,
+        "direct_follow_count": 0,
+        "distinct_activity_count": 0,
+        "duration_summary": 0,
+        "durations": 0,
+        "raw_event_count": 0,
+        "rework_cases_per_activity": 0,
+        "variant_count": 0,
+        "variants": 0
+      },
+      "aligned_pm4py": {
+        "aggregate_rework_event_count": 57556,
+        "analysis_distinct_activity_count": 23,
+        "analysis_event_count": 164506,
+        "case_count": 13087,
+        "cases_with_rework": 7019,
+        "direct_follow_count": 151419,
+        "distinct_activity_count": 24,
+        "duration_summary": {
+          "count": 13087,
+          "max_ms": 11855936012,
+          "min_ms": 1855,
+          "p50_ms": 69857434,
+          "p90_ms": 2631910032
+        },
+        "raw_event_count": 262200,
+        "rework_cases_per_activity": {
+          "O_CANCELLED": 749,
+          "O_CREATED": 1438,
+          "O_SELECTED": 1438,
+          "O_SENT": 1438,
+          "O_SENT_BACK": 197,
+          "W_Afhandelen leads": 772,
+          "W_Beoordelen fraude": 81,
+          "W_Completeren aanvraag": 4420,
+          "W_Nabellen incomplete dossiers": 1474,
+          "W_Nabellen offertes": 4274,
+          "W_Valideren aanvraag": 2020
+        },
+        "variant_count": 4336
+      },
+      "analysis_timestamp_tie_excess_events": 13993,
+      "compared_case_durations": 13087,
+      "compared_dfg_relations": 138,
+      "compared_variant_sequences": 4336,
+      "complete_source_order_mismatch_counts": {
+        "aggregate_rework_event_count": 0,
+        "analysis_distinct_activity_count": 0,
+        "analysis_event_count": 0,
+        "case_count": 0,
+        "cases_with_rework": 0,
+        "dfg": 0,
+        "direct_follow_count": 0,
+        "distinct_activity_count": 0,
+        "duration_summary": 0,
+        "durations": 0,
+        "raw_event_count": 0,
+        "rework_cases_per_activity": 0,
+        "variant_count": 0,
+        "variants": 0
+      },
+      "core_validation": "PASS",
+      "directly_follows": [
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "W_Nabellen offertes",
+          "transition_count": 13521
+        },
+        {
+          "from_activity": "A_SUBMITTED",
+          "to_activity": "A_PARTLYSUBMITTED",
+          "transition_count": 13087
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "W_Completeren aanvraag",
+          "transition_count": 12619
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 8620
+        },
+        {
+          "from_activity": "O_CREATED",
+          "to_activity": "O_SENT",
+          "transition_count": 7030
+        },
+        {
+          "from_activity": "A_PARTLYSUBMITTED",
+          "to_activity": "A_PREACCEPTED",
+          "transition_count": 6959
+        },
+        {
+          "from_activity": "A_PARTLYSUBMITTED",
+          "to_activity": "A_DECLINED",
+          "transition_count": 5301
+        },
+        {
+          "from_activity": "O_SENT",
+          "to_activity": "W_Completeren aanvraag",
+          "transition_count": 5015
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "W_Nabellen offertes",
+          "transition_count": 3554
+        },
+        {
+          "from_activity": "O_SENT_BACK",
+          "to_activity": "W_Nabellen offertes",
+          "transition_count": 3254
+        },
+        {
+          "from_activity": "O_SELECTED",
+          "to_activity": "O_CREATED",
+          "transition_count": 3149
+        },
+        {
+          "from_activity": "A_FINALIZED",
+          "to_activity": "O_CREATED",
+          "transition_count": 2907
+        },
+        {
+          "from_activity": "O_SELECTED",
+          "to_activity": "A_FINALIZED",
+          "transition_count": 2907
+        },
+        {
+          "from_activity": "A_ACCEPTED",
+          "to_activity": "O_SELECTED",
+          "transition_count": 2879
+        },
+        {
+          "from_activity": "A_PREACCEPTED",
+          "to_activity": "W_Completeren aanvraag",
+          "transition_count": 2793
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "A_ACCEPTED",
+          "transition_count": 2737
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "O_SENT_BACK",
+          "transition_count": 2693
+        },
+        {
+          "from_activity": "A_PREACCEPTED",
+          "to_activity": "W_Afhandelen leads",
+          "transition_count": 2515
+        },
+        {
+          "from_activity": "A_DECLINED",
+          "to_activity": "W_Afhandelen leads",
+          "transition_count": 2234
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 2114
+        },
+        {
+          "from_activity": "A_FINALIZED",
+          "to_activity": "O_SELECTED",
+          "transition_count": 2108
+        },
+        {
+          "from_activity": "A_ACCEPTED",
+          "to_activity": "A_FINALIZED",
+          "transition_count": 2089
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 1988
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 1928
+        },
+        {
+          "from_activity": "A_PREACCEPTED",
+          "to_activity": "A_ACCEPTED",
+          "transition_count": 1765
+        },
+        {
+          "from_activity": "O_SENT",
+          "to_activity": "W_Nabellen offertes",
+          "transition_count": 1619
+        },
+        {
+          "from_activity": "W_Afhandelen leads",
+          "to_activity": "W_Completeren aanvraag",
+          "transition_count": 1597
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "O_CANCELLED",
+          "transition_count": 1133
+        },
+        {
+          "from_activity": "A_DECLINED",
+          "to_activity": "W_Completeren aanvraag",
+          "transition_count": 1113
+        },
+        {
+          "from_activity": "O_CANCELLED",
+          "to_activity": "O_SELECTED",
+          "transition_count": 1041
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "A_CANCELLED",
+          "transition_count": 989
+        },
+        {
+          "from_activity": "O_CANCELLED",
+          "to_activity": "O_CREATED",
+          "transition_count": 974
+        },
+        {
+          "from_activity": "O_SELECTED",
+          "to_activity": "O_CANCELLED",
+          "transition_count": 974
+        },
+        {
+          "from_activity": "A_ACTIVATED",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 941
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 879
+        },
+        {
+          "from_activity": "A_CANCELLED",
+          "to_activity": "O_CANCELLED",
+          "transition_count": 864
+        },
+        {
+          "from_activity": "A_APPROVED",
+          "to_activity": "A_ACTIVATED",
+          "transition_count": 789
+        },
+        {
+          "from_activity": "O_ACCEPTED",
+          "to_activity": "A_REGISTERED",
+          "transition_count": 771
+        },
+        {
+          "from_activity": "O_CANCELLED",
+          "to_activity": "A_CANCELLED",
+          "transition_count": 767
+        },
+        {
+          "from_activity": "A_PARTLYSUBMITTED",
+          "to_activity": "W_Afhandelen leads",
+          "transition_count": 760
+        },
+        {
+          "from_activity": "A_CANCELLED",
+          "to_activity": "W_Completeren aanvraag",
+          "transition_count": 750
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "A_CANCELLED",
+          "transition_count": 732
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "A_DECLINED",
+          "transition_count": 685
+        },
+        {
+          "from_activity": "A_APPROVED",
+          "to_activity": "A_REGISTERED",
+          "transition_count": 682
+        },
+        {
+          "from_activity": "A_REGISTERED",
+          "to_activity": "A_ACTIVATED",
+          "transition_count": 670
+        },
+        {
+          "from_activity": "O_ACCEPTED",
+          "to_activity": "A_APPROVED",
+          "transition_count": 654
+        },
+        {
+          "from_activity": "W_Afhandelen leads",
+          "to_activity": "A_ACCEPTED",
+          "transition_count": 611
+        },
+        {
+          "from_activity": "A_REGISTERED",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 604
+        },
+        {
+          "from_activity": "W_Afhandelen leads",
+          "to_activity": "A_DECLINED",
+          "transition_count": 602
+        },
+        {
+          "from_activity": "A_REGISTERED",
+          "to_activity": "A_APPROVED",
+          "transition_count": 581
+        },
+        {
+          "from_activity": "O_ACCEPTED",
+          "to_activity": "A_ACTIVATED",
+          "transition_count": 566
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "O_SENT_BACK",
+          "transition_count": 561
+        },
+        {
+          "from_activity": "A_ACTIVATED",
+          "to_activity": "A_REGISTERED",
+          "transition_count": 546
+        },
+        {
+          "from_activity": "O_CANCELLED",
+          "to_activity": "W_Nabellen offertes",
+          "transition_count": 512
+        },
+        {
+          "from_activity": "A_ACTIVATED",
+          "to_activity": "A_APPROVED",
+          "transition_count": 478
+        },
+        {
+          "from_activity": "A_APPROVED",
+          "to_activity": "O_ACCEPTED",
+          "transition_count": 474
+        },
+        {
+          "from_activity": "A_CANCELLED",
+          "to_activity": "W_Nabellen offertes",
+          "transition_count": 467
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "O_CANCELLED",
+          "transition_count": 466
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "O_SELECTED",
+          "transition_count": 449
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "O_ACCEPTED",
+          "transition_count": 448
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "O_ACCEPTED",
+          "transition_count": 444
+        },
+        {
+          "from_activity": "O_DECLINED",
+          "to_activity": "A_DECLINED",
+          "transition_count": 419
+        },
+        {
+          "from_activity": "W_Afhandelen leads",
+          "to_activity": "A_PREACCEPTED",
+          "transition_count": 403
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "O_SELECTED",
+          "transition_count": 389
+        },
+        {
+          "from_activity": "A_DECLINED",
+          "to_activity": "O_DECLINED",
+          "transition_count": 383
+        },
+        {
+          "from_activity": "W_Afhandelen leads",
+          "to_activity": "W_Afhandelen leads",
+          "transition_count": 369
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "O_ACCEPTED",
+          "transition_count": 350
+        },
+        {
+          "from_activity": "A_DECLINED",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 348
+        },
+        {
+          "from_activity": "A_REGISTERED",
+          "to_activity": "O_ACCEPTED",
+          "transition_count": 332
+        },
+        {
+          "from_activity": "O_DECLINED",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 320
+        },
+        {
+          "from_activity": "A_APPROVED",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 275
+        },
+        {
+          "from_activity": "O_ACCEPTED",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 230
+        },
+        {
+          "from_activity": "O_SENT",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 205
+        },
+        {
+          "from_activity": "O_SENT_BACK",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 200
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "A_DECLINED",
+          "transition_count": 199
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "A_APPROVED",
+          "transition_count": 199
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "O_DECLINED",
+          "transition_count": 196
+        },
+        {
+          "from_activity": "A_ACTIVATED",
+          "to_activity": "O_ACCEPTED",
+          "transition_count": 192
+        },
+        {
+          "from_activity": "O_SENT",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 191
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "O_SENT_BACK",
+          "transition_count": 190
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "A_APPROVED",
+          "transition_count": 168
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "A_APPROVED",
+          "transition_count": 165
+        },
+        {
+          "from_activity": "A_PREACCEPTED",
+          "to_activity": "A_DECLINED",
+          "transition_count": 160
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "O_CANCELLED",
+          "transition_count": 154
+        },
+        {
+          "from_activity": "A_PREACCEPTED",
+          "to_activity": "A_CANCELLED",
+          "transition_count": 134
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "O_DECLINED",
+          "transition_count": 126
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "A_DECLINED",
+          "transition_count": 113
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "O_SELECTED",
+          "transition_count": 99
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "O_DECLINED",
+          "transition_count": 90
+        },
+        {
+          "from_activity": "A_ACTIVATED",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 89
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "W_Beoordelen fraude",
+          "transition_count": 89
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "A_REGISTERED",
+          "transition_count": 89
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "A_REGISTERED",
+          "transition_count": 89
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "A_ACTIVATED",
+          "transition_count": 85
+        },
+        {
+          "from_activity": "A_ACCEPTED",
+          "to_activity": "W_Completeren aanvraag",
+          "transition_count": 74
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "A_ACTIVATED",
+          "transition_count": 74
+        },
+        {
+          "from_activity": "O_CANCELLED",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 70
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "A_CANCELLED",
+          "transition_count": 69
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "A_REGISTERED",
+          "transition_count": 68
+        },
+        {
+          "from_activity": "A_PARTLYSUBMITTED",
+          "to_activity": "W_Beoordelen fraude",
+          "transition_count": 67
+        },
+        {
+          "from_activity": "W_Nabellen incomplete dossiers",
+          "to_activity": "A_DECLINED",
+          "transition_count": 67
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "A_DECLINED",
+          "transition_count": 64
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "O_CANCELLED",
+          "transition_count": 64
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "O_SELECTED",
+          "transition_count": 64
+        },
+        {
+          "from_activity": "W_Afhandelen leads",
+          "to_activity": "A_CANCELLED",
+          "transition_count": 61
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "A_ACTIVATED",
+          "transition_count": 61
+        },
+        {
+          "from_activity": "A_REGISTERED",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 58
+        },
+        {
+          "from_activity": "A_CANCELLED",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 57
+        },
+        {
+          "from_activity": "A_DECLINED",
+          "to_activity": "W_Beoordelen fraude",
+          "transition_count": 57
+        },
+        {
+          "from_activity": "A_DECLINED",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 50
+        },
+        {
+          "from_activity": "A_ACCEPTED",
+          "to_activity": "A_CANCELLED",
+          "transition_count": 46
+        },
+        {
+          "from_activity": "O_DECLINED",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 36
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "W_Beoordelen fraude",
+          "transition_count": 33
+        },
+        {
+          "from_activity": "O_DECLINED",
+          "to_activity": "W_Nabellen offertes",
+          "transition_count": 27
+        },
+        {
+          "from_activity": "A_APPROVED",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 26
+        },
+        {
+          "from_activity": "A_ACCEPTED",
+          "to_activity": "A_DECLINED",
+          "transition_count": 25
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 25
+        },
+        {
+          "from_activity": "O_ACCEPTED",
+          "to_activity": "W_Nabellen incomplete dossiers",
+          "transition_count": 22
+        },
+        {
+          "from_activity": "A_DECLINED",
+          "to_activity": "W_Nabellen offertes",
+          "transition_count": 21
+        },
+        {
+          "from_activity": "W_Afhandelen leads",
+          "to_activity": "W_Beoordelen fraude",
+          "transition_count": 21
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "W_Afhandelen leads",
+          "transition_count": 20
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "A_FINALIZED",
+          "transition_count": 19
+        },
+        {
+          "from_activity": "A_CANCELLED",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 14
+        },
+        {
+          "from_activity": "O_CANCELLED",
+          "to_activity": "W_Valideren aanvraag",
+          "transition_count": 12
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "O_SENT_BACK",
+          "transition_count": 10
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "A_CANCELLED",
+          "transition_count": 9
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "O_DECLINED",
+          "transition_count": 6
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "A_PREACCEPTED",
+          "transition_count": 5
+        },
+        {
+          "from_activity": "W_Nabellen offertes",
+          "to_activity": "W_Completeren aanvraag",
+          "transition_count": 4
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "O_ACCEPTED",
+          "transition_count": 3
+        },
+        {
+          "from_activity": "W_Completeren aanvraag",
+          "to_activity": "W_Beoordelen fraude",
+          "transition_count": 3
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "W_Completeren aanvraag",
+          "transition_count": 2
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "A_ACTIVATED",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "A_APPROVED",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "A_REGISTERED",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "O_DECLINED",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "W_Beoordelen fraude",
+          "to_activity": "O_SELECTED",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "W_Valideren aanvraag",
+          "to_activity": "W_Nabellen offertes",
+          "transition_count": 1
+        }
+      ],
+      "native_unfiltered_mismatch_counts": {
+        "aggregate_rework_event_count": 1,
+        "analysis_distinct_activity_count": 1,
+        "analysis_event_count": 1,
+        "case_count": 0,
+        "cases_with_rework": 1,
+        "dfg": 92,
+        "direct_follow_count": 1,
+        "distinct_activity_count": 0,
+        "duration_summary": 0,
+        "durations": 0,
+        "raw_event_count": 0,
+        "rework_cases_per_activity": 7,
+        "variant_count": 1,
+        "variants": 8645
+      },
+      "native_unfiltered_pm4py": {
+        "aggregate_rework_event_count": 155194,
+        "analysis_distinct_activity_count": 24,
+        "analysis_event_count": 262200,
+        "case_count": 13087,
+        "cases_with_rework": 9658,
+        "direct_follow_count": 249113,
+        "distinct_activity_count": 24,
+        "duration_summary": {
+          "count": 13087,
+          "max_ms": 11855936012,
+          "min_ms": 1855,
+          "p50_ms": 69857434,
+          "p90_ms": 2631910032
+        },
+        "raw_event_count": 262200,
+        "rework_cases_per_activity": {
+          "O_CANCELLED": 749,
+          "O_CREATED": 1438,
+          "O_SELECTED": 1438,
+          "O_SENT": 1438,
+          "O_SENT_BACK": 197,
+          "W_Afhandelen leads": 4755,
+          "W_Beoordelen fraude": 108,
+          "W_Completeren aanvraag": 7367,
+          "W_Nabellen incomplete dossiers": 1647,
+          "W_Nabellen offertes": 5011,
+          "W_Valideren aanvraag": 3210,
+          "W_Wijzigen contractgegevens": 4
+        },
+        "variant_count": 4366
+      },
+      "raw_traces_reordered_by_timestamp": 0,
+      "source_sha256": "5cd9cc16b9bcb20bd4aae45666a5d87479ddbf47e6371618b6ad217174cecdf3",
+      "status": "PASS",
+      "top_variants": [
+        {
+          "activity_sequence": [
+            "A_SUBMITTED",
+            "A_PARTLYSUBMITTED",
+            "A_DECLINED"
+          ],
+          "case_count": 3429,
+          "case_share": 0.262015740811,
+          "variant_id": "f673180b6584aa8bde14a2d8fb4dcc754f14743b3c7095c7203d45d9fbed3b33"
+        },
+        {
+          "activity_sequence": [
+            "A_SUBMITTED",
+            "A_PARTLYSUBMITTED",
+            "A_DECLINED",
+            "W_Afhandelen leads"
+          ],
+          "case_count": 1872,
+          "case_share": 0.143042714144,
+          "variant_id": "be74247c1f825f2aa262f60af175bf4d2eadb729757de4a32464d63e6c169fee"
+        },
+        {
+          "activity_sequence": [
+            "A_SUBMITTED",
+            "A_PARTLYSUBMITTED",
+            "W_Afhandelen leads",
+            "A_DECLINED",
+            "W_Afhandelen leads"
+          ],
+          "case_count": 271,
+          "case_share": 0.0207075724,
+          "variant_id": "0bd7d4fab5ba51914452eba18c5a973122ef88429993ea94ec7dfe4b9833fc04"
+        },
+        {
+          "activity_sequence": [
+            "A_SUBMITTED",
+            "A_PARTLYSUBMITTED",
+            "A_PREACCEPTED",
+            "W_Afhandelen leads",
+            "A_DECLINED",
+            "W_Completeren aanvraag"
+          ],
+          "case_count": 209,
+          "case_share": 0.015970046611,
+          "variant_id": "7aeb44b25c94e8f72766845d74b2c838963a89f93b1de5feef89ddb33dc130f9"
+        },
+        {
+          "activity_sequence": [
+            "A_SUBMITTED",
+            "A_PARTLYSUBMITTED",
+            "A_PREACCEPTED",
+            "A_DECLINED",
+            "W_Completeren aanvraag"
+          ],
+          "case_count": 160,
+          "case_share": 0.012225873004,
+          "variant_id": "2c718c9e807ecf1011697212acc9389b79d2e8243c1449f6ed55df371c582291"
+        },
+        {
+          "activity_sequence": [
+            "A_SUBMITTED",
+            "A_PARTLYSUBMITTED",
+            "A_PREACCEPTED",
+            "A_CANCELLED",
+            "W_Completeren aanvraag"
+          ],
+          "case_count": 134,
+          "case_share": 0.010239168641,
+          "variant_id": "f2c2862a4dd3f9b5831ab07e89aea1a265f59957a452d1af2b7eaf59a06fa69e"
+        },
+        {
+          "activity_sequence": [
+            "A_SUBMITTED",
+            "A_PARTLYSUBMITTED",
+            "A_PREACCEPTED",
+            "W_Afhandelen leads",
+            "W_Completeren aanvraag",
+            "A_DECLINED",
+            "W_Completeren aanvraag"
+          ],
+          "case_count": 126,
+          "case_share": 0.00962787499,
+          "variant_id": "aebc8f880cc1bac0e1e1fb3430bfdd681ee08fbd6ad61067e35d40b0dd2cfb3c"
+        },
+        {
+          "activity_sequence": [
+            "A_SUBMITTED",
+            "A_PARTLYSUBMITTED",
+            "A_PREACCEPTED",
+            "W_Completeren aanvraag",
+            "A_DECLINED",
+            "W_Completeren aanvraag"
+          ],
+          "case_count": 93,
+          "case_share": 0.007106288683,
+          "variant_id": "ff39aecacb58c48a1d9b80abb5d675985b5b7e22587bb9ce3cfdbd5b64cdb810"
+        },
+        {
+          "activity_sequence": [
+            "A_SUBMITTED",
+            "A_PARTLYSUBMITTED",
+            "A_PREACCEPTED",
+            "W_Completeren aanvraag",
+            "A_CANCELLED",
+            "W_Completeren aanvraag"
+          ],
+          "case_count": 89,
+          "case_share": 0.006800641858,
+          "variant_id": "361d07d7f20f2bde436b966110b9a66b712c608e2c886749f78bdc38a811b02c"
+        },
+        {
+          "activity_sequence": [
+            "A_SUBMITTED",
+            "A_PARTLYSUBMITTED",
+            "A_PREACCEPTED",
+            "W_Afhandelen leads",
+            "W_Completeren aanvraag",
+            "W_Completeren aanvraag",
+            "A_DECLINED",
+            "W_Completeren aanvraag"
+          ],
+          "case_count": 74,
+          "case_share": 0.005654466264,
+          "variant_id": "3810aba84494c7e7059cf0809f64a02cf883201a4b4c9ed10e67c7fd64a84e80"
+        }
+      ]
+    },
+    "helpdesk": {
+      "aligned_mismatch_counts": {
+        "aggregate_rework_event_count": 0,
+        "analysis_distinct_activity_count": 0,
+        "analysis_event_count": 0,
+        "case_count": 0,
+        "cases_with_rework": 0,
+        "dfg": 0,
+        "direct_follow_count": 0,
+        "distinct_activity_count": 0,
+        "duration_summary": 0,
+        "durations": 0,
+        "raw_event_count": 0,
+        "rework_cases_per_activity": 0,
+        "variant_count": 0,
+        "variants": 0
+      },
+      "aligned_pm4py": {
+        "aggregate_rework_event_count": 1905,
+        "analysis_distinct_activity_count": 14,
+        "analysis_event_count": 21348,
+        "case_count": 4580,
+        "cases_with_rework": 1240,
+        "direct_follow_count": 16768,
+        "distinct_activity_count": 14,
+        "duration_summary": {
+          "count": 4580,
+          "max_ms": 5183565000,
+          "min_ms": 2647453000,
+          "p50_ms": 3442862000,
+          "p90_ms": 4579685000
+        },
+        "raw_event_count": 21348,
+        "rework_cases_per_activity": {
+          "Assign seriousness": 394,
+          "Closed": 15,
+          "Create SW anomaly": 8,
+          "Require upgrade": 15,
+          "Resolve SW anomaly": 5,
+          "Resolve ticket": 386,
+          "Take in charge ticket": 623,
+          "Wait": 194
+        },
+        "variant_count": 226
+      },
+      "analysis_timestamp_tie_excess_events": 130,
+      "compared_case_durations": 4580,
+      "compared_dfg_relations": 55,
+      "compared_variant_sequences": 226,
+      "complete_source_order_mismatch_counts": {
+        "aggregate_rework_event_count": 0,
+        "analysis_distinct_activity_count": 0,
+        "analysis_event_count": 0,
+        "case_count": 0,
+        "cases_with_rework": 0,
+        "dfg": 0,
+        "direct_follow_count": 0,
+        "distinct_activity_count": 0,
+        "duration_summary": 0,
+        "durations": 0,
+        "raw_event_count": 0,
+        "rework_cases_per_activity": 0,
+        "variant_count": 0,
+        "variants": 0
+      },
+      "core_validation": "PASS",
+      "directly_follows": [
+        {
+          "from_activity": "Resolve ticket",
+          "to_activity": "Closed",
+          "transition_count": 4558
+        },
+        {
+          "from_activity": "Assign seriousness",
+          "to_activity": "Take in charge ticket",
+          "transition_count": 4160
+        },
+        {
+          "from_activity": "Take in charge ticket",
+          "to_activity": "Resolve ticket",
+          "transition_count": 3563
+        },
+        {
+          "from_activity": "Take in charge ticket",
+          "to_activity": "Wait",
+          "transition_count": 1265
+        },
+        {
+          "from_activity": "Wait",
+          "to_activity": "Resolve ticket",
+          "transition_count": 773
+        },
+        {
+          "from_activity": "Wait",
+          "to_activity": "Take in charge ticket",
+          "transition_count": 558
+        },
+        {
+          "from_activity": "Assign seriousness",
+          "to_activity": "Assign seriousness",
+          "transition_count": 439
+        },
+        {
+          "from_activity": "Assign seriousness",
+          "to_activity": "Resolve ticket",
+          "transition_count": 258
+        },
+        {
+          "from_activity": "Resolve ticket",
+          "to_activity": "Resolve ticket",
+          "transition_count": 254
+        },
+        {
+          "from_activity": "Resolve ticket",
+          "to_activity": "Take in charge ticket",
+          "transition_count": 154
+        },
+        {
+          "from_activity": "Wait",
+          "to_activity": "Wait",
+          "transition_count": 113
+        },
+        {
+          "from_activity": "Insert ticket",
+          "to_activity": "Assign seriousness",
+          "transition_count": 111
+        },
+        {
+          "from_activity": "Take in charge ticket",
+          "to_activity": "Take in charge ticket",
+          "transition_count": 99
+        },
+        {
+          "from_activity": "Require upgrade",
+          "to_activity": "Resolve ticket",
+          "transition_count": 82
+        },
+        {
+          "from_activity": "Take in charge ticket",
+          "to_activity": "Require upgrade",
+          "transition_count": 72
+        },
+        {
+          "from_activity": "Assign seriousness",
+          "to_activity": "Wait",
+          "transition_count": 69
+        },
+        {
+          "from_activity": "Take in charge ticket",
+          "to_activity": "Create SW anomaly",
+          "transition_count": 53
+        },
+        {
+          "from_activity": "Create SW anomaly",
+          "to_activity": "Resolve ticket",
+          "transition_count": 42
+        },
+        {
+          "from_activity": "Require upgrade",
+          "to_activity": "Require upgrade",
+          "transition_count": 16
+        },
+        {
+          "from_activity": "Closed",
+          "to_activity": "Closed",
+          "transition_count": 14
+        },
+        {
+          "from_activity": "Create SW anomaly",
+          "to_activity": "Require upgrade",
+          "transition_count": 11
+        },
+        {
+          "from_activity": "Assign seriousness",
+          "to_activity": "Require upgrade",
+          "transition_count": 8
+        },
+        {
+          "from_activity": "Require upgrade",
+          "to_activity": "Wait",
+          "transition_count": 8
+        },
+        {
+          "from_activity": "Create SW anomaly",
+          "to_activity": "Resolve SW anomaly",
+          "transition_count": 7
+        },
+        {
+          "from_activity": "Wait",
+          "to_activity": "Require upgrade",
+          "transition_count": 7
+        },
+        {
+          "from_activity": "Require upgrade",
+          "to_activity": "Take in charge ticket",
+          "transition_count": 6
+        },
+        {
+          "from_activity": "Resolve SW anomaly",
+          "to_activity": "Resolve SW anomaly",
+          "transition_count": 5
+        },
+        {
+          "from_activity": "Take in charge ticket",
+          "to_activity": "Schedule intervention",
+          "transition_count": 5
+        },
+        {
+          "from_activity": "Assign seriousness",
+          "to_activity": "Create SW anomaly",
+          "transition_count": 4
+        },
+        {
+          "from_activity": "Create SW anomaly",
+          "to_activity": "Create SW anomaly",
+          "transition_count": 4
+        },
+        {
+          "from_activity": "Insert ticket",
+          "to_activity": "Wait",
+          "transition_count": 4
+        },
+        {
+          "from_activity": "Resolve SW anomaly",
+          "to_activity": "Require upgrade",
+          "transition_count": 4
+        },
+        {
+          "from_activity": "Resolve SW anomaly",
+          "to_activity": "Resolve ticket",
+          "transition_count": 4
+        },
+        {
+          "from_activity": "Schedule intervention",
+          "to_activity": "Resolve ticket",
+          "transition_count": 4
+        },
+        {
+          "from_activity": "Create SW anomaly",
+          "to_activity": "Take in charge ticket",
+          "transition_count": 3
+        },
+        {
+          "from_activity": "Insert ticket",
+          "to_activity": "Take in charge ticket",
+          "transition_count": 3
+        },
+        {
+          "from_activity": "Require upgrade",
+          "to_activity": "Create SW anomaly",
+          "transition_count": 3
+        },
+        {
+          "from_activity": "Resolve ticket",
+          "to_activity": "Wait",
+          "transition_count": 3
+        },
+        {
+          "from_activity": "Closed",
+          "to_activity": "Take in charge ticket",
+          "transition_count": 2
+        },
+        {
+          "from_activity": "RESOLVED",
+          "to_activity": "INVALID",
+          "transition_count": 2
+        },
+        {
+          "from_activity": "Resolve ticket",
+          "to_activity": "RESOLVED",
+          "transition_count": 2
+        },
+        {
+          "from_activity": "Wait",
+          "to_activity": "Assign seriousness",
+          "transition_count": 2
+        },
+        {
+          "from_activity": "Wait",
+          "to_activity": "Create SW anomaly",
+          "transition_count": 2
+        },
+        {
+          "from_activity": "Closed",
+          "to_activity": "VERIFIED",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "DUPLICATE",
+          "to_activity": "Resolve ticket",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "INVALID",
+          "to_activity": "Closed",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "INVALID",
+          "to_activity": "VERIFIED",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "Require upgrade",
+          "to_activity": "VERIFIED",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "Resolve ticket",
+          "to_activity": "Assign seriousness",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "Resolve ticket",
+          "to_activity": "Require upgrade",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "Schedule intervention",
+          "to_activity": "Take in charge ticket",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "Take in charge ticket",
+          "to_activity": "Assign seriousness",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "Take in charge ticket",
+          "to_activity": "Resolve SW anomaly",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "VERIFIED",
+          "to_activity": "Closed",
+          "transition_count": 1
+        },
+        {
+          "from_activity": "VERIFIED",
+          "to_activity": "DUPLICATE",
+          "transition_count": 1
+        }
+      ],
+      "native_unfiltered_mismatch_counts": {
+        "aggregate_rework_event_count": 0,
+        "analysis_distinct_activity_count": 0,
+        "analysis_event_count": 0,
+        "case_count": 0,
+        "cases_with_rework": 0,
+        "dfg": 0,
+        "direct_follow_count": 0,
+        "distinct_activity_count": 0,
+        "duration_summary": 0,
+        "durations": 0,
+        "raw_event_count": 0,
+        "rework_cases_per_activity": 0,
+        "variant_count": 0,
+        "variants": 0
+      },
+      "native_unfiltered_pm4py": {
+        "aggregate_rework_event_count": 1905,
+        "analysis_distinct_activity_count": 14,
+        "analysis_event_count": 21348,
+        "case_count": 4580,
+        "cases_with_rework": 1240,
+        "direct_follow_count": 16768,
+        "distinct_activity_count": 14,
+        "duration_summary": {
+          "count": 4580,
+          "max_ms": 5183565000,
+          "min_ms": 2647453000,
+          "p50_ms": 3442862000,
+          "p90_ms": 4579685000
+        },
+        "raw_event_count": 21348,
+        "rework_cases_per_activity": {
+          "Assign seriousness": 394,
+          "Closed": 15,
+          "Create SW anomaly": 8,
+          "Require upgrade": 15,
+          "Resolve SW anomaly": 5,
+          "Resolve ticket": 386,
+          "Take in charge ticket": 623,
+          "Wait": 194
+        },
+        "variant_count": 226
+      },
+      "raw_traces_reordered_by_timestamp": 0,
+      "source_sha256": "31024fa6da0a35578643d50f2bea6e90d5ce97628b64851e271b521f005eef1c",
+      "status": "PASS",
+      "top_variants": [
+        {
+          "activity_sequence": [
+            "Assign seriousness",
+            "Take in charge ticket",
+            "Resolve ticket",
+            "Closed"
+          ],
+          "case_count": 2366,
+          "case_share": 0.516593886463,
+          "variant_id": "b68ec1d0d23bd0d2c00e0d0041113df7ca94eb2b11755256ae7151643ebb8ab1"
+        },
+        {
+          "activity_sequence": [
+            "Assign seriousness",
+            "Take in charge ticket",
+            "Wait",
+            "Resolve ticket",
+            "Closed"
+          ],
+          "case_count": 552,
+          "case_share": 0.120524017467,
+          "variant_id": "41c1b318237d89c9c6603122a2e9c7594f7b3a39925bbb7dc0a6089b1d42c100"
+        },
+        {
+          "activity_sequence": [
+            "Assign seriousness",
+            "Take in charge ticket",
+            "Wait",
+            "Take in charge ticket",
+            "Resolve ticket",
+            "Closed"
+          ],
+          "case_count": 228,
+          "case_share": 0.049781659389,
+          "variant_id": "c14472ccddb1889c656fb34cae0b88fa2a1cc3873931dd13ce37aa29748d9d9a"
+        },
+        {
+          "activity_sequence": [
+            "Assign seriousness",
+            "Assign seriousness",
+            "Take in charge ticket",
+            "Resolve ticket",
+            "Closed"
+          ],
+          "case_count": 213,
+          "case_share": 0.046506550218,
+          "variant_id": "8f1b87258c8b6abc74bde8900893a595832fdf705bd2c7932a9bc583660171cf"
+        },
+        {
+          "activity_sequence": [
+            "Assign seriousness",
+            "Resolve ticket",
+            "Closed"
+          ],
+          "case_count": 164,
+          "case_share": 0.035807860262,
+          "variant_id": "2da57f0ed46be73e3b42dfc9b59d25a77147b9ac2f3f98d6043d3c16fb8e92ca"
+        },
+        {
+          "activity_sequence": [
+            "Assign seriousness",
+            "Take in charge ticket",
+            "Resolve ticket",
+            "Resolve ticket",
+            "Closed"
+          ],
+          "case_count": 109,
+          "case_share": 0.023799126638,
+          "variant_id": "608237c5aac62c4e05e22e8d459c1d7c0a7702451cb73c5f8f1f9abe5f4ea913"
+        },
+        {
+          "activity_sequence": [
+            "Insert ticket",
+            "Assign seriousness",
+            "Take in charge ticket",
+            "Resolve ticket",
+            "Closed"
+          ],
+          "case_count": 69,
+          "case_share": 0.015065502183,
+          "variant_id": "9214d38ace18183a033a96bfc47bbe37095ed7c2fbfd02ca03cf6db8591ca9aa"
+        },
+        {
+          "activity_sequence": [
+            "Assign seriousness",
+            "Resolve ticket",
+            "Resolve ticket",
+            "Closed"
+          ],
+          "case_count": 62,
+          "case_share": 0.013537117904,
+          "variant_id": "1af0295bca827fc30d13f3bfaba7c1ec5c16e6aad08d6b9d8225b5dad49ab013"
+        },
+        {
+          "activity_sequence": [
+            "Assign seriousness",
+            "Take in charge ticket",
+            "Resolve ticket",
+            "Take in charge ticket",
+            "Resolve ticket",
+            "Closed"
+          ],
+          "case_count": 48,
+          "case_share": 0.010480349345,
+          "variant_id": "abd224cb2824c0772995f786e5dab4f23b4fccfbe3f5e323e76c64f01999d5e8"
+        },
+        {
+          "activity_sequence": [
+            "Assign seriousness",
+            "Take in charge ticket",
+            "Require upgrade",
+            "Resolve ticket",
+            "Closed"
+          ],
+          "case_count": 40,
+          "case_share": 0.008733624454,
+          "variant_id": "a132cd284811857b5c805d5c2f91469c4bcf8ebb9fe3f9285d225e9b8fcc82dc"
+        }
+      ]
+    }
+  },
+  "pm4py_version": "2.7.23.11",
+  "schema_version": "v2-pm4py-crosscheck-v1",
+  "status": "PASS"
+}

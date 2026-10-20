@@ -32,7 +32,12 @@ def _extract_json(text: str) -> dict[str, Any]:
     try:
         value = json.loads(text[start : end + 1])
     except json.JSONDecodeError as exc:
-        raise LocalAgentError("model response contained invalid JSON") from exc
+        raise LocalAgentError(
+            f"model response contained invalid JSON: {exc.msg} "
+            f"at line {exc.lineno} column {exc.colno}. "
+            "Return exactly one JSON object; remove trailing braces, duplicate facts, "
+            "or a second object after its closing brace"
+        ) from exc
     if not isinstance(value, dict):
         raise LocalAgentError("model response JSON must be an object")
     return value
@@ -54,6 +59,20 @@ def _canonical_value_match(candidate: Any, source: Any) -> bool:
 def _ungrounded_parameter_error(
     question: str, tool_name: Any, arguments: Any
 ) -> dict[str, Any] | None:
+    if not isinstance(tool_name, str) or not tool_name:
+        return {
+            "error": {
+                "code": "INVALID_ARGUMENT",
+                "details": {"parameter": "tool"},
+                "message": (
+                    "tool must be a non-empty top-level string, a sibling of action "
+                    "and arguments. Move the tool name out of arguments into tool; "
+                    "arguments must directly contain only that tool's parameters, "
+                    "without an exact wrapper"
+                ),
+            },
+            "schema_version": TOOL_SCHEMA_VERSION,
+        }
     optional_parameters = {
         "describe_log": {"sla_threshold_ms"},
         "list_transitions": {"from_activity", "to_activity"},
@@ -210,11 +229,22 @@ class GroundedAgent:
                 "status": "ANSWERED or UNAVAILABLE",
                 "supporting_fact_ids": ["exact returned fact_id"],
             },
-            "tool_request": {
-                "action": "tool",
-                "arguments": {"exact": "validated tool arguments"},
-                "tool": "one allowlisted tool name",
-            },
+            "tool_requests": [
+                {"action": "tool", "tool": "describe_log",
+                 "arguments": {"log_id": "<identifier from question>"}},
+                {"action": "tool", "tool": "list_variants",
+                 "arguments": {"log_id": "<identifier from question>",
+                               "order_by": "case_count_desc", "limit": 1}},
+                {"action": "tool", "tool": "list_transitions",
+                 "arguments": {"log_id": "<identifier from question>",
+                               "order_by": "transition_count_desc", "limit": 1}},
+                {"action": "tool", "tool": "list_activities",
+                 "arguments": {"log_id": "<identifier from question>",
+                               "order_by": "event_count_desc", "limit": 1}},
+                {"action": "tool", "tool": "get_case_trace",
+                 "arguments": {"log_id": "<identifier from question>",
+                               "case_id": "<case identifier from question>", "perspective": "complete"}},
+            ],
         }
         selection = {
             "activity_N": "list_activities; 'most rework' means order_by rework_event_count_desc; copy the requested limit N",
@@ -244,7 +274,17 @@ class GroundedAgent:
             "facts have been returned, copy their complete fact objects exactly. For prediction, probability, "
             "forecast, or recommendation requests, the first response MUST be final UNAVAILABLE with no tool call. "
             "Do not summarize, "
-            "rename, recompute, or combine their values. Output one JSON object and no prose. /no_think\n"
+            "rename, recompute, or combine their values. Each tool_request example below "
+            "includes every required argument for that tool. Select only the tool needed "
+            "for the question. list_variants, list_transitions, and list_activities always "
+            "require log_id, order_by, and limit together; log_id alone is invalid. "
+            "Replace example identifiers, order_by, limit, and perspective with the values "
+            "required by the question; in particular copy the requested limit N, not the "
+            "example's limit 1. Never omit required arguments or rely on defaults. "
+            "action, tool, and arguments are top-level siblings. Never put tool inside "
+            "arguments or wrap parameters in an exact object. Output exactly one JSON "
+            "object and no prose. Stop immediately after its final closing brace; do not "
+            "append another object, duplicate facts, or extra closing braces. /no_think\n"
             f"TOOLS={canonical_json(self._tools.definitions())}\n"
             f"SELECTION={canonical_json(selection)}\n"
             f"PROTOCOL={canonical_json(protocol)}"
