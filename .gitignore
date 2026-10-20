@@ -13,6 +13,7 @@ data/processed/
 data/datasets/
 data/imports/
 data/e2e/
+data/benchmark/
 *.duckdb
 *.duckdb.wal
 analytics/powerbi/data/
@@ -33,6 +34,7 @@ evidence/*
 !evidence/v2-crosscheck.json
 !evidence/v2-ai-verification.json
 !evidence/v2-helpdesk-analysis.json
+!evidence/performance/
 
 # Private/internal project state
 memory/

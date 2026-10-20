@@ -1,0 +1,686 @@
+{
+  "benchmark_schema_version": "benchmark-v1",
+  "datasets": {
+    "bpic2012": {
+      "case_count": 13087,
+      "event_count": 262200,
+      "kind": "real",
+      "phases": {
+        "describe_log": {
+          "peak_rss_bytes": {
+            "max": 150720512,
+            "median": 148840448,
+            "min": 147038208
+          },
+          "rss_before_bytes": {
+            "max": 41861120,
+            "median": 41824256,
+            "min": 41664512
+          },
+          "seconds": {
+            "max": 0.30517320000217296,
+            "median": 0.2901190999982646,
+            "min": 0.28580199999851175
+          }
+        },
+        "get_case_trace": {
+          "peak_rss_bytes": {
+            "max": 52416512,
+            "median": 52269056,
+            "min": 52047872
+          },
+          "rss_before_bytes": {
+            "max": 44777472,
+            "median": 44400640,
+            "min": 44003328
+          },
+          "seconds": {
+            "max": 0.027628600000753067,
+            "median": 0.02417000000423286,
+            "min": 0.021680700010620058
+          }
+        },
+        "import": {
+          "peak_rss_bytes": {
+            "max": 157388800,
+            "median": 151277568,
+            "min": 149712896
+          },
+          "rss_before_bytes": {
+            "max": 41926656,
+            "median": 41897984,
+            "min": 41795584
+          },
+          "seconds": {
+            "max": 6.729144599987194,
+            "median": 6.678438499991898,
+            "min": 6.573884299999918
+          }
+        },
+        "list_activities": {
+          "peak_rss_bytes": {
+            "max": 84484096,
+            "median": 82358272,
+            "min": 81104896
+          },
+          "rss_before_bytes": {
+            "max": 42016768,
+            "median": 41943040,
+            "min": 41684992
+          },
+          "seconds": {
+            "max": 0.03968450000684243,
+            "median": 0.037151900003664196,
+            "min": 0.03552789999230299
+          }
+        },
+        "list_transitions": {
+          "peak_rss_bytes": {
+            "max": 116105216,
+            "median": 112529408,
+            "min": 111779840
+          },
+          "rss_before_bytes": {
+            "max": 42020864,
+            "median": 41852928,
+            "min": 41758720
+          },
+          "seconds": {
+            "max": 0.05681449999974575,
+            "median": 0.05484730000898708,
+            "min": 0.0525463999947533
+          }
+        },
+        "list_variants": {
+          "peak_rss_bytes": {
+            "max": 98762752,
+            "median": 98082816,
+            "min": 97968128
+          },
+          "rss_before_bytes": {
+            "max": 41938944,
+            "median": 41848832,
+            "min": 41803776
+          },
+          "seconds": {
+            "max": 0.1787830999965081,
+            "median": 0.1712344999978086,
+            "min": 0.1669090000068536
+          }
+        }
+      },
+      "source_sha256": "5cd9cc16b9bcb20bd4aae45666a5d87479ddbf47e6371618b6ad217174cecdf3",
+      "source_size_bytes": 3342406
+    },
+    "helpdesk": {
+      "case_count": 4580,
+      "event_count": 21348,
+      "kind": "real",
+      "phases": {
+        "describe_log": {
+          "peak_rss_bytes": {
+            "max": 82079744,
+            "median": 81915904,
+            "min": 81313792
+          },
+          "rss_before_bytes": {
+            "max": 41943040,
+            "median": 41832448,
+            "min": 41807872
+          },
+          "seconds": {
+            "max": 0.09300069999881089,
+            "median": 0.09023100000922568,
+            "min": 0.0880678999965312
+          }
+        },
+        "get_case_trace": {
+          "peak_rss_bytes": {
+            "max": 52379648,
+            "median": 51113984,
+            "min": 50884608
+          },
+          "rss_before_bytes": {
+            "max": 45985792,
+            "median": 44929024,
+            "min": 44457984
+          },
+          "seconds": {
+            "max": 0.023572299993247725,
+            "median": 0.02307239999936428,
+            "min": 0.021378299992647953
+          }
+        },
+        "import": {
+          "peak_rss_bytes": {
+            "max": 90345472,
+            "median": 88920064,
+            "min": 87330816
+          },
+          "rss_before_bytes": {
+            "max": 41910272,
+            "median": 41893888,
+            "min": 41799680
+          },
+          "seconds": {
+            "max": 0.6046236999973189,
+            "median": 0.5822417000017595,
+            "min": 0.5608652000082657
+          }
+        },
+        "list_activities": {
+          "peak_rss_bytes": {
+            "max": 71282688,
+            "median": 69660672,
+            "min": 66859008
+          },
+          "rss_before_bytes": {
+            "max": 41943040,
+            "median": 41816064,
+            "min": 41713664
+          },
+          "seconds": {
+            "max": 0.0345647999929497,
+            "median": 0.02774769999086857,
+            "min": 0.02654449999681674
+          }
+        },
+        "list_transitions": {
+          "peak_rss_bytes": {
+            "max": 73043968,
+            "median": 72028160,
+            "min": 71610368
+          },
+          "rss_before_bytes": {
+            "max": 41906176,
+            "median": 41746432,
+            "min": 41684992
+          },
+          "seconds": {
+            "max": 0.037715700003900565,
+            "median": 0.03325139998923987,
+            "min": 0.02995740000915248
+          }
+        },
+        "list_variants": {
+          "peak_rss_bytes": {
+            "max": 58310656,
+            "median": 58105856,
+            "min": 57962496
+          },
+          "rss_before_bytes": {
+            "max": 41979904,
+            "median": 41914368,
+            "min": 41791488
+          },
+          "seconds": {
+            "max": 0.03693740000016987,
+            "median": 0.03484690000186674,
+            "min": 0.032896999997319654
+          }
+        }
+      },
+      "source_sha256": "31024fa6da0a35578643d50f2bea6e90d5ce97628b64851e271b521f005eef1c",
+      "source_size_bytes": 3271588
+    },
+    "synthetic-1000k": {
+      "case_count": 49941,
+      "event_count": 1000000,
+      "kind": "synthetic",
+      "phases": {
+        "describe_log": {
+          "peak_rss_bytes": {
+            "max": 389476352,
+            "median": 388493312,
+            "min": 387362816
+          },
+          "rss_before_bytes": {
+            "max": 41951232,
+            "median": 41897984,
+            "min": 41799680
+          },
+          "seconds": {
+            "max": 1.1171651999902679,
+            "median": 1.0861568999971496,
+            "min": 1.0761372999986634
+          }
+        },
+        "get_case_trace": {
+          "peak_rss_bytes": {
+            "max": 53547008,
+            "median": 53387264,
+            "min": 53235712
+          },
+          "rss_before_bytes": {
+            "max": 45424640,
+            "median": 44900352,
+            "min": 44748800
+          },
+          "seconds": {
+            "max": 0.02344720000110101,
+            "median": 0.02312500000698492,
+            "min": 0.02270689999568276
+          }
+        },
+        "import": {
+          "peak_rss_bytes": {
+            "max": 402636800,
+            "median": 396292096,
+            "min": 391184384
+          },
+          "rss_before_bytes": {
+            "max": 41984000,
+            "median": 41844736,
+            "min": 41672704
+          },
+          "seconds": {
+            "max": 8.98113889999513,
+            "median": 8.649308899999596,
+            "min": 8.583861299994169
+          }
+        },
+        "list_activities": {
+          "peak_rss_bytes": {
+            "max": 110575616,
+            "median": 108130304,
+            "min": 106188800
+          },
+          "rss_before_bytes": {
+            "max": 41971712,
+            "median": 41902080,
+            "min": 41762816
+          },
+          "seconds": {
+            "max": 0.04445490000944119,
+            "median": 0.04257369998958893,
+            "min": 0.04160549999505747
+          }
+        },
+        "list_transitions": {
+          "peak_rss_bytes": {
+            "max": 196874240,
+            "median": 196022272,
+            "min": 194252800
+          },
+          "rss_before_bytes": {
+            "max": 41959424,
+            "median": 41844736,
+            "min": 41615360
+          },
+          "seconds": {
+            "max": 0.09883410000475124,
+            "median": 0.0899900000076741,
+            "min": 0.08735050000541378
+          }
+        },
+        "list_variants": {
+          "peak_rss_bytes": {
+            "max": 289583104,
+            "median": 288890880,
+            "min": 287227904
+          },
+          "rss_before_bytes": {
+            "max": 42008576,
+            "median": 41897984,
+            "min": 41771008
+          },
+          "seconds": {
+            "max": 0.8865079000097467,
+            "median": 0.8666480999963824,
+            "min": 0.8588642999966396
+          }
+        }
+      },
+      "source_sha256": "9d1ad60854fe92383acb2f6d8c9f1068846482f80a88bd46fc35e814d6bbb5a2",
+      "source_size_bytes": 53550448
+    },
+    "synthetic-100k": {
+      "case_count": 5056,
+      "event_count": 100000,
+      "kind": "synthetic",
+      "phases": {
+        "describe_log": {
+          "peak_rss_bytes": {
+            "max": 109981696,
+            "median": 107868160,
+            "min": 106504192
+          },
+          "rss_before_bytes": {
+            "max": 41889792,
+            "median": 41762816,
+            "min": 41586688
+          },
+          "seconds": {
+            "max": 0.235933500007377,
+            "median": 0.20577430000412278,
+            "min": 0.1898879000073066
+          }
+        },
+        "get_case_trace": {
+          "peak_rss_bytes": {
+            "max": 52146176,
+            "median": 51916800,
+            "min": 51773440
+          },
+          "rss_before_bytes": {
+            "max": 45121536,
+            "median": 44945408,
+            "min": 44281856
+          },
+          "seconds": {
+            "max": 0.02635849999205675,
+            "median": 0.02329219999955967,
+            "min": 0.020912399995722808
+          }
+        },
+        "import": {
+          "peak_rss_bytes": {
+            "max": 121364480,
+            "median": 119861248,
+            "min": 117915648
+          },
+          "rss_before_bytes": {
+            "max": 42070016,
+            "median": 41717760,
+            "min": 41693184
+          },
+          "seconds": {
+            "max": 1.4835167999990517,
+            "median": 1.2300350000004983,
+            "min": 1.1792119000019738
+          }
+        },
+        "list_activities": {
+          "peak_rss_bytes": {
+            "max": 74117120,
+            "median": 72970240,
+            "min": 72286208
+          },
+          "rss_before_bytes": {
+            "max": 42119168,
+            "median": 41934848,
+            "min": 41857024
+          },
+          "seconds": {
+            "max": 0.03747589999693446,
+            "median": 0.03099820000352338,
+            "min": 0.030043799997656606
+          }
+        },
+        "list_transitions": {
+          "peak_rss_bytes": {
+            "max": 92094464,
+            "median": 89681920,
+            "min": 86999040
+          },
+          "rss_before_bytes": {
+            "max": 41959424,
+            "median": 41824256,
+            "min": 41697280
+          },
+          "seconds": {
+            "max": 0.053658499993616715,
+            "median": 0.043844400002853945,
+            "min": 0.040946199995232746
+          }
+        },
+        "list_variants": {
+          "peak_rss_bytes": {
+            "max": 76660736,
+            "median": 75919360,
+            "min": 75722752
+          },
+          "rss_before_bytes": {
+            "max": 41947136,
+            "median": 41865216,
+            "min": 41791488
+          },
+          "seconds": {
+            "max": 0.11756790000072215,
+            "median": 0.10264949999691453,
+            "min": 0.09827570000197738
+          }
+        }
+      },
+      "source_sha256": "d05c445286a3731b343a407180a7e4ce807592b521bc87add696c1d8b545afb1",
+      "source_size_bytes": 5354704
+    },
+    "synthetic-2000k": {
+      "case_count": 99864,
+      "event_count": 2000000,
+      "kind": "synthetic",
+      "phases": {
+        "describe_log": {
+          "peak_rss_bytes": {
+            "max": 715091968,
+            "median": 700854272,
+            "min": 695615488
+          },
+          "rss_before_bytes": {
+            "max": 41951232,
+            "median": 41803776,
+            "min": 41689088
+          },
+          "seconds": {
+            "max": 2.2390138000046136,
+            "median": 2.213638000001083,
+            "min": 2.1974696000106633
+          }
+        },
+        "get_case_trace": {
+          "peak_rss_bytes": {
+            "max": 57352192,
+            "median": 57061376,
+            "min": 56655872
+          },
+          "rss_before_bytes": {
+            "max": 45854720,
+            "median": 45457408,
+            "min": 44605440
+          },
+          "seconds": {
+            "max": 0.029380400010268204,
+            "median": 0.02503840001008939,
+            "min": 0.023857000007410534
+          }
+        },
+        "import": {
+          "peak_rss_bytes": {
+            "max": 719474688,
+            "median": 715825152,
+            "min": 705294336
+          },
+          "rss_before_bytes": {
+            "max": 41910272,
+            "median": 41779200,
+            "min": 41648128
+          },
+          "seconds": {
+            "max": 17.10164569999324,
+            "median": 16.56001100000867,
+            "min": 16.305783500007237
+          }
+        },
+        "list_activities": {
+          "peak_rss_bytes": {
+            "max": 158490624,
+            "median": 156639232,
+            "min": 153751552
+          },
+          "rss_before_bytes": {
+            "max": 41922560,
+            "median": 41877504,
+            "min": 41820160
+          },
+          "seconds": {
+            "max": 0.0717512999981409,
+            "median": 0.06914680000045337,
+            "min": 0.06753900001058355
+          }
+        },
+        "list_transitions": {
+          "peak_rss_bytes": {
+            "max": 325832704,
+            "median": 319070208,
+            "min": 309706752
+          },
+          "rss_before_bytes": {
+            "max": 42020864,
+            "median": 41758720,
+            "min": 41738240
+          },
+          "seconds": {
+            "max": 0.17354809999233112,
+            "median": 0.15301189999445342,
+            "min": 0.14505210000788793
+          }
+        },
+        "list_variants": {
+          "peak_rss_bytes": {
+            "max": 532369408,
+            "median": 531521536,
+            "min": 530923520
+          },
+          "rss_before_bytes": {
+            "max": 41943040,
+            "median": 41832448,
+            "min": 41709568
+          },
+          "seconds": {
+            "max": 1.9078971999988426,
+            "median": 1.8521550000004936,
+            "min": 1.7856708000035724
+          }
+        }
+      },
+      "source_sha256": "5efa2c8a25209814468c20f1560b80d8edd1b6e4b9fb9f4d0c86bae9f50b78df",
+      "source_size_bytes": 107100910
+    },
+    "synthetic-500k": {
+      "case_count": 25011,
+      "event_count": 500000,
+      "kind": "synthetic",
+      "phases": {
+        "describe_log": {
+          "peak_rss_bytes": {
+            "max": 249282560,
+            "median": 247144448,
+            "min": 239996928
+          },
+          "rss_before_bytes": {
+            "max": 41947136,
+            "median": 41807872,
+            "min": 41746432
+          },
+          "seconds": {
+            "max": 0.6166430000012042,
+            "median": 0.5923285000026226,
+            "min": 0.5850292999966769
+          }
+        },
+        "get_case_trace": {
+          "peak_rss_bytes": {
+            "max": 53035008,
+            "median": 52498432,
+            "min": 52453376
+          },
+          "rss_before_bytes": {
+            "max": 45461504,
+            "median": 44834816,
+            "min": 44482560
+          },
+          "seconds": {
+            "max": 0.025081300002057105,
+            "median": 0.023085299995727837,
+            "min": 0.022794800010160543
+          }
+        },
+        "import": {
+          "peak_rss_bytes": {
+            "max": 254111744,
+            "median": 250249216,
+            "min": 247353344
+          },
+          "rss_before_bytes": {
+            "max": 41861120,
+            "median": 41758720,
+            "min": 41660416
+          },
+          "seconds": {
+            "max": 4.626591699998244,
+            "median": 4.567562800002634,
+            "min": 4.52918569999747
+          }
+        },
+        "list_activities": {
+          "peak_rss_bytes": {
+            "max": 89636864,
+            "median": 89157632,
+            "min": 87707648
+          },
+          "rss_before_bytes": {
+            "max": 41897984,
+            "median": 41811968,
+            "min": 41709568
+          },
+          "seconds": {
+            "max": 0.03732629999285564,
+            "median": 0.03541630000108853,
+            "min": 0.034056099990266375
+          }
+        },
+        "list_transitions": {
+          "peak_rss_bytes": {
+            "max": 154882048,
+            "median": 148815872,
+            "min": 138096640
+          },
+          "rss_before_bytes": {
+            "max": 41967616,
+            "median": 41795584,
+            "min": 41697280
+          },
+          "seconds": {
+            "max": 0.07663889999093954,
+            "median": 0.07319779999670573,
+            "min": 0.07000460001290776
+          }
+        },
+        "list_variants": {
+          "peak_rss_bytes": {
+            "max": 172650496,
+            "median": 171479040,
+            "min": 169611264
+          },
+          "rss_before_bytes": {
+            "max": 41963520,
+            "median": 41832448,
+            "min": 41660416
+          },
+          "seconds": {
+            "max": 0.43864700000267476,
+            "median": 0.4316710000130115,
+            "min": 0.420702599993092
+          }
+        }
+      },
+      "source_sha256": "42e4638c1a2d3d94032dc916a167b0a8710f796d91a678a62f4812d8ff4b493c",
+      "source_size_bytes": 26774908
+    }
+  },
+  "environment": {
+    "cpu_count": 16,
+    "duckdb": "1.5.5",
+    "machine": "AMD64",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+    "python": "3.13.15",
+    "total_memory_bytes": 34270076928
+  },
+  "method": {
+    "process_per_run": true,
+    "runs": 5,
+    "synthetic_seed": 20261019,
+    "warmup_runs": 1
+  }
+}
