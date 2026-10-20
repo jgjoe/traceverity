@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import csv
-from collections.abc import Iterator
+from collections.abc import Generator, Iterator
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -208,8 +208,8 @@ def _timestamp_ms(
     return utc_epoch_ms(moment)
 
 
-def iter_csv_events(path: Path, config: CsvImportConfig) -> Iterator[Event]:
-    """Yield canonical events in source order while validating the mapping contract."""
+def iter_csv_events(path: Path, config: CsvImportConfig) -> Generator[Event, None, int]:
+    """Yield validated events, returning the distinct source case count at exhaustion."""
 
     path = Path(path)
     mapping = config.mapping
@@ -261,6 +261,7 @@ def iter_csv_events(path: Path, config: CsvImportConfig) -> Iterator[Event]:
             "includes, so the control-flow perspective would be empty; map a column that marks "
             "completion or leave lifecycle unmapped"
         )
+    return len(positions)
 
 
 def csv_trace_count(path: Path, config: CsvImportConfig) -> int:

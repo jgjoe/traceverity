@@ -23,6 +23,8 @@ class SourceContractError(ValueError):
 COMPLETE_LIFECYCLE = "COMPLETE"
 """The single lifecycle value the canonical completion perspective includes."""
 
+_UTC_EPOCH = datetime(1970, 1, 1, tzinfo=UTC)
+
 
 def utc_epoch_ms(moment: datetime) -> int:
     """Convert an offset-aware moment to canonical UTC epoch milliseconds.
@@ -33,5 +35,5 @@ def utc_epoch_ms(moment: datetime) -> int:
 
     if moment.tzinfo is None or moment.utcoffset() is None:
         raise SourceContractError("timestamp must carry an explicit UTC offset")
-    delta = moment.astimezone(UTC) - datetime(1970, 1, 1, tzinfo=UTC)
+    delta = moment - _UTC_EPOCH
     return (delta.days * 86_400 + delta.seconds) * 1_000 + delta.microseconds // 1_000

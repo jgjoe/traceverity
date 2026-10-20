@@ -3,7 +3,7 @@ from __future__ import annotations
 import gzip
 from datetime import datetime
 from pathlib import Path
-from typing import BinaryIO, Iterator
+from typing import BinaryIO, Generator, Iterator
 from xml.etree import ElementTree
 
 from .events import Event, SourceContractError, utc_epoch_ms
@@ -73,8 +73,8 @@ def _iter_traces(path: Path) -> Iterator[ElementTree.Element]:
         raise XesContractError(f"{Path(path).name}: malformed XES XML: {exc}") from exc
 
 
-def iter_xes_events(path: Path) -> Iterator[Event]:
-    """Yield source events in trace order while validating the required contract."""
+def iter_xes_events(path: Path) -> Generator[Event, None, int]:
+    """Yield validated events, returning the source count including empty traces."""
 
     seen_case_ids: set[str] = set()
     trace_number = 0
@@ -104,6 +104,7 @@ def iter_xes_events(path: Path) -> Iterator[Event]:
                 resource=resource,
             )
             event_pos += 1
+    return trace_number
 
 
 def source_trace_count(path: Path) -> int:

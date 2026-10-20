@@ -33,6 +33,7 @@ piw-analytics-export = "piw.analytics:main"
 piw-crosscheck = "piw.crosscheck:main"
 piw-ai-verification = "piw.ai_verification:main"
 piw-helpdesk-analysis = "piw.helpdesk_analysis:main"
+piw-benchmark = "piw.benchmark:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
